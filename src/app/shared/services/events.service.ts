@@ -17,4 +17,6 @@ export class PlayerService {
                 map(json => json.data)
             );
     }
+
+    //faire un fichier json par différent type d'event, et faire un get pour chaque type?
 }

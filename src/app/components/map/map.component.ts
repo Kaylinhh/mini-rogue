@@ -10,20 +10,22 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 export class MapComponent implements OnInit {
 
   player!: Player;
-  d100: number = 0;
+  firstD100: number = 0;
+  secondD100: number = 0;
 
   constructor(
     private playerService: PlayerService
   ){}
   
   ngOnInit(): void {
-    this.playerService._getPlayer$().subscribe((player: Player) => {
-      this.player = player;
-    });
+    // this.playerService._getPlayer$().subscribe((player: Player) => {
+    //   this.player = player;
+    // });
     this.randomEvent();
   }
   
   randomEvent(): void {
-    this.d100 = Math.floor(Math.random() * 100);
+    this.firstD100 = Math.floor(Math.random() * 100);
+    this.secondD100 = Math.floor(Math.random() * 100);
   }
 }

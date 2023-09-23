@@ -10,7 +10,7 @@
 <app-camp *ngIf="d100 > 10 && d100 <= 20"></app-camp>
 <app-loot *ngIf="d100 > 20 && d100 <= 40"></app-loot>
 <app-monster *ngIf="d100 > 40 && d100 <= 70"></app-monster>
-<app-shop *ngIf="d100 > 70 && d100 <= 80"></app-shop>
+<app-shop *ngIf="d100 > 70 && d100 <= 80" [player]="player" (updatedPlayer)="updatedPlayerReceive($event)"></app-shop>
 <app-trap *ngIf="d100 > 80"></app-trap>
 
 <button (click)="next()">Next</button>

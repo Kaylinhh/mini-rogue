@@ -33,4 +33,8 @@ export class GameComponent {
   randomEvent(): void {
     this.d100 = Math.floor(Math.random() * 100);
   }
+
+  updatedPlayerReceive(player: Player): void {
+    this.playerService._setPlayer$(player);
+  }
 }

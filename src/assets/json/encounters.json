@@ -1,0 +1,20 @@
+{
+    "traps":[
+        {
+            "id": 1,
+            "name": "Picots",
+            "description": "blabla",
+            "penalties": [],
+            "bonus": [],
+            "zone": 1
+        },
+        {
+            "id": 2,
+            "name": "Rochers",
+            "description": "blabla",
+            "penalties": [],
+            "bonus": [],
+            "zone": 1
+        }
+    ]
+}

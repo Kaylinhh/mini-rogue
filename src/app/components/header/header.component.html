@@ -1,1 +1,17 @@
-<p>header works!</p>
+<div>
+    <ul>
+        <li>Life: {{ player.life }}</li>
+        <li>Experience: {{ player.experience }}</li>
+        <li>Gold: {{ player.gold }}</li>
+        <li>Food: {{ player.food }}</li>
+        <li>Armor: {{ player.armor }}</li>
+        <li>Bonus: {{ player.bonus }}</li>
+        <li>Penalty: {{ player.penalty }}</li>
+        <li>Die: {{ player.die }}</li>
+        <li>Encounter: {{ player.currentEncounter }}/{{ player.maxEncounter }}</li>
+        <li>Floor: {{ player.currentFloor }}/{{ player.maxFloor }}</li>
+        <li>Zone: {{ player.currentZone }}/3</li>
+        <li>Boss Floor: {{ player.bossFloor }}</li>
+    </ul>
+    <button (click)="addLife(1)">Add 1 life</button>
+</div>

@@ -13,6 +13,9 @@ import { TrapComponent } from './components/events/trap/trap.component';
 import { ShopComponent } from './components/events/shop/shop.component';
 import { LootComponent } from './components/events/loot/loot.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { MapComponent } from './components/map/map.component';
+import { EventComponent } from './components/events/event/event.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +29,14 @@ import { FooterComponent } from './components/footer/footer.component';
     TrapComponent,
     ShopComponent,
     LootComponent,
-    FooterComponent
+    FooterComponent,
+    MapComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

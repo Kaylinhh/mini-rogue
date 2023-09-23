@@ -1,0 +1,29 @@
+{
+    "sell":[
+        {
+            "quantityGiven": 1,
+            "typeGiven": "armor",
+            "quantityWanted": 10,
+            "typeWanted": "gold"
+            
+        },{
+            "quantityGiven": 1,
+            "typeGiven": "life",
+            "quantityWanted": 3,
+            "typeWanted": "gold" 
+        }
+    ],
+    "buy":[
+        {
+            "quantityWanted": 1,
+            "typeWanted": "life",
+            "quantityGiven": 2,
+            "typeGiven": "gold"
+        },{
+            "quantityWanted": 1,
+            "typeWanted": "armor",
+            "quantityGiven": 4,
+            "typeGiven": "gold"
+        }
+    ]
+}

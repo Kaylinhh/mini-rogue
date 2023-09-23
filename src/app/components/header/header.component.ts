@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
-import { PlayerService } from 'src/app/shared/player.service';
+import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
   selector: 'app-header',

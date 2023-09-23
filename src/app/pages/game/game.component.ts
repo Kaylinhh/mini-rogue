@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Player } from 'src/app/models/player.model';
+import { PlayerService } from 'src/app/shared/player.service';
 
 @Component({
   selector: 'app-game',
@@ -7,4 +9,28 @@ import { Component } from '@angular/core';
 })
 export class GameComponent {
 
+  player!: Player;
+
+  d100: number = 0;
+
+  constructor(
+    private playerService: PlayerService
+  ){}
+
+  ngOnInit(): void {
+    this.playerService._getPlayer$().subscribe((player: Player) => {
+      this.player = player;
+    });
+    this.randomEvent();
+  }
+
+  next(): void {
+    if(this.player.status === "encounter") this.player.status = "door";
+    else this.player.status = "encounter";
+    this.playerService._setPlayer$(this.player);
+  }
+
+  randomEvent(): void {
+    this.d100 = Math.floor(Math.random() * 100);
+  }
 }

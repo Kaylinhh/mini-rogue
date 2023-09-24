@@ -1,5 +1,5 @@
 <div>
-    <div *ngIf="firstD100 <= 10">
+    <div *ngIf="firstD100 <= 10" [routerLink]="['/game']">
         <img class="card-img" src="assets/img/map-icons/boss.png">
     </div>
 
@@ -22,6 +22,8 @@
     <div *ngIf="firstD100 > 80">
         <img class="card-img" src="assets/img/map-icons/trap.png">
     </div>
+
+    <button (click)="goToEvent1()">Select</button>
 </div>
 
 <div>
@@ -48,4 +50,7 @@
     <div *ngIf="secondD100 > 80">
         <img class="card-img" src="assets/img/map-icons/trap.png">
     </div>
+
+    <button (click)="goToEvent2()">Select</button>
+
 </div>

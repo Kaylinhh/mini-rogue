@@ -6,11 +6,18 @@
 
 <button (click)="randomEvent()">Randomized {{ d100 }}</button>
 
-<app-boss *ngIf="d100 <= 10"></app-boss>
-<app-camp *ngIf="d100 > 10 && d100 <= 20"></app-camp>
-<app-loot *ngIf="d100 > 20 && d100 <= 40"></app-loot>
-<app-monster *ngIf="d100 > 40 && d100 <= 70"></app-monster>
-<app-shop *ngIf="d100 > 70 && d100 <= 80" [player]="player" (updatedPlayer)="updatedPlayerReceive($event)"></app-shop>
-<app-trap *ngIf="d100 > 80"></app-trap>
+<div *ngIf="player.status === 'encounter'">
+    <app-boss *ngIf="d100 <= 10"></app-boss>
+    <app-camp *ngIf="d100 > 10 && d100 <= 20"></app-camp>
+    <app-loot *ngIf="d100 > 20 && d100 <= 40"></app-loot>
+    <app-monster *ngIf="d100 > 40 && d100 <= 70"></app-monster>
+    <app-shop *ngIf="d100 > 70 && d100 <= 80" [player]="player"
+        (updatedPlayer)="updatedPlayerReceive($event)"></app-shop>
+    <app-trap *ngIf="d100 > 80"></app-trap>
 
-<button (click)="next()">Next</button>
+    <button (click)="next()">Next</button>
+</div>
+
+<div *ngIf="player.status === 'door'">
+    <app-map (diceRoll)="mapDice($event)"></app-map>
+</div>

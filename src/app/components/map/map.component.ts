@@ -8,7 +8,7 @@ import { PlayerService } from 'src/app/shared/services/player.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  
+
   @Output() diceRoll: EventEmitter<number> = new EventEmitter();
 
   player!: Player;
@@ -34,16 +34,20 @@ export class MapComponent implements OnInit {
   goToEvent1() {
     if (this.player.status === "door") this.player.status = "encounter";
     else this.player.status = "door";
+
+    this.player.currentEncounter += 1;
+
     this.playerService._setPlayer$(this.player);
 
-    this.diceRoll.emit(this.firstD100)
+    this.diceRoll.emit(this.firstD100);
   }
 
   goToEvent2() {
     if (this.player.status === "door") this.player.status = "encounter";
     else this.player.status = "door";
+
     this.playerService._setPlayer$(this.player);
 
-    this.diceRoll.emit(this.secondD100)
+    this.diceRoll.emit(this.secondD100);
   }
 }

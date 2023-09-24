@@ -37,4 +37,8 @@ export class GameComponent {
   updatedPlayerReceive(player: Player): void {
     this.playerService._setPlayer$(player);
   }
+
+  mapDice(event: number) {
+    this.d100 = event
+  }
 }

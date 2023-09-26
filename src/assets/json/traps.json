@@ -1,0 +1,36 @@
+[
+    [{
+        "id": 1,
+        "name": "Spikes",
+        "description": "Des petits picots quoi, rien de bien méchant èé",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2],
+                "precisionLabel": "very sharped"
+            },
+            {
+                "blackDie": [3,4],
+                "precisionLabel": "with poison"
+            },
+            {
+                "blackDie": [5,6],
+                "precisionLabel": "...deadly"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Rocks",
+        "description": "De la caillasse",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "precisionLabel": "small"
+            },
+            {
+                "blackDie": [5,6],
+                "precisionLabel": "large"
+            }
+        ]
+    }]
+]

@@ -14,7 +14,10 @@
         (updatedPlayer)="updatedPlayerReceive($event)"
         (nextEvent)="next()"
         ></app-shop>
-    <app-trap *ngIf="d100 > eventPercentageCut[4]"></app-trap>
+    <app-trap *ngIf="d100 > eventPercentageCut[4]"
+        [player]="player"
+        (nextEvent)="next()"
+        ></app-trap>
 </div>
 
 <div *ngIf="player.status === 'door'">

@@ -46,6 +46,8 @@ export class MapComponent implements OnInit {
     if (this.player.status === "door") this.player.status = "encounter";
     else this.player.status = "door";
 
+    this.player.currentEncounter += 1;
+
     this.playerService._setPlayer$(this.player);
 
     this.diceRoll.emit(this.secondD100);

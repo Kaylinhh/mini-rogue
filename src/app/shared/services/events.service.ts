@@ -1,22 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { Monster } from 'src/app/models/monster.model';
 
 @Injectable({
     providedIn: 'root'
 })
-export class PlayerService {
-
-    private readonly BASE_URL = "/assets/json/encounters.json";
+export class eventService {
 
     constructor(private http: HttpClient) { }
 
-    _getAllEvents$(): Observable<any> {
-        return this.http.get<any>(this.BASE_URL)
-            .pipe(
-                map(json => json.data)
-            );
+    _getMonsters$(): Observable<any> {
+        return this.http.get<any>("/assets/json/monsters.json")
+        .pipe(
+            map(json => json.data)
+        )
     }
 
-    //faire un fichier json par différent type d'event, et faire un get pour chaque type?
 }

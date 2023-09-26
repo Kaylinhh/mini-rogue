@@ -1,0 +1,18 @@
+[
+    {
+        "img": "",
+        "name": "Big Foot",
+        "life": 7,
+        "damage": 2,
+        "loot": "something",
+        "zoneNumber": 1
+    },
+    {
+        "img": "",
+        "name": "Chupacabra",
+        "life": 5,
+        "damage": 1,
+        "loot": "another thing",
+        "zoneNumber": 1
+    }
+]

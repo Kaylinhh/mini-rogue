@@ -17,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { MapComponent } from './components/map/map.component';
 import { EventComponent } from './components/events/event/event.component';
+import { DieRollComponent } from './components/die-roll/die-roll.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EventComponent } from './components/events/event/event.component';
     LootComponent,
     FooterComponent,
     MapComponent,
-    EventComponent
+    EventComponent,
+    DieRollComponent
   ],
   imports: [
     BrowserModule,

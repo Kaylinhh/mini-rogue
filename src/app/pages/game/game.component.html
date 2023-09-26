@@ -2,20 +2,19 @@
 
 <h1>{{ player.status }}</h1>
 
-<p>game works!</p>
-
-<button (click)="randomEvent()">Randomized {{ d100 }}</button>
+<button (click)="randomEvent()">Change event</button>
 
 <div *ngIf="player.status === 'encounter'">
-    <app-boss *ngIf="d100 <= 10"></app-boss>
-    <app-camp *ngIf="d100 > 10 && d100 <= 20"></app-camp>
-    <app-loot *ngIf="d100 > 20 && d100 <= 40"></app-loot>
-    <app-monster *ngIf="d100 > 40 && d100 <= 70"></app-monster>
-    <app-shop *ngIf="d100 > 70 && d100 <= 80" [player]="player"
-        (updatedPlayer)="updatedPlayerReceive($event)"></app-shop>
-    <app-trap *ngIf="d100 > 80"></app-trap>
-
-    <button (click)="next()">Next</button>
+    <app-boss *ngIf="d100 <= eventPercentageCut[0]"></app-boss>
+    <app-camp *ngIf="d100 > eventPercentageCut[0] && d100 <= eventPercentageCut[1]"></app-camp>
+    <app-loot *ngIf="d100 > eventPercentageCut[1] && d100 <= eventPercentageCut[2]"></app-loot>
+    <app-monster *ngIf="d100 > eventPercentageCut[2] && d100 <= eventPercentageCut[3]"></app-monster>
+    <app-shop *ngIf="d100 > eventPercentageCut[3] && d100 <= eventPercentageCut[4]"
+        [player]="player"
+        (updatedPlayer)="updatedPlayerReceive($event)"
+        (nextEvent)="next()"
+        ></app-shop>
+    <app-trap *ngIf="d100 > eventPercentageCut[4]"></app-trap>
 </div>
 
 <div *ngIf="player.status === 'door'">

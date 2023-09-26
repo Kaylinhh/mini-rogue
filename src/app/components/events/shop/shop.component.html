@@ -1,19 +1,23 @@
-<table>
-    <tr>
-        <th colspan="5">Acheter</th>
-        <th colspan="5">Vendre</th>
-    </tr>
-    <tr *ngFor="let line of [].constructor(1); let i = index">
-        <td *ngIf="shopSell[i]">{{ shopSell[i].quantityGiven }}</td>
-        <td *ngIf="shopSell[i]">{{ shopSell[i].typeGiven }}</td>
-        <td><button (click)="trade('buy', i)">>>></button></td>
-        <td *ngIf="shopSell[i]">{{ shopSell[i].quantityWanted }}</td>
-        <td *ngIf="shopSell[i]">{{ shopSell[i].typeWanted }}</td>        
-
-        <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityWanted }}</td>
-        <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeWanted }}</td>
-        <td><button (click)="trade('sell', i)">>>></button></td>
-        <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityGiven }}</td>
-        <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeGiven }}</td>
-    </tr>
-</table>
+<div>
+    <img [src]="'../../../../assets/img/encounters/shopkeeper/' + player.currentZone + '.png'">
+    <table>
+        <tr>
+            <th colspan="5">Acheter</th>
+            <th colspan="5">Vendre</th>
+        </tr>
+        <tr *ngFor="let line of [].constructor(2); let i = index">
+            <td *ngIf="shopSell[i]">{{ shopSell[i].quantityWanted }}</td>
+            <td *ngIf="shopSell[i]">{{ shopSell[i].typeWanted }}</td>   
+            <td><button (click)="trade('buy', i)">>>></button></td>
+            <td *ngIf="shopSell[i]">{{ shopSell[i].quantityGiven }}</td>
+            <td *ngIf="shopSell[i]">{{ shopSell[i].typeGiven }}</td>     
+    
+            <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityWanted }}</td>
+            <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeWanted }}</td>
+            <td><button (click)="trade('sell', i)">>>></button></td>
+            <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityGiven }}</td>
+            <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeGiven }}</td>
+        </tr>
+    </table>
+    <button (click)="next()">Poursuivre</button>
+</div>

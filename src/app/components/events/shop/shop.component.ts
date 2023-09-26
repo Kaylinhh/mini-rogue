@@ -16,6 +16,9 @@ export class ShopComponent {
   @Output()
   updatedPlayer: EventEmitter<Player> = new EventEmitter;
 
+  @Output()
+  nextEvent: EventEmitter<void> = new EventEmitter;
+
   shopSell: ShopOffer[] = [];
   shopBuy: ShopOffer[] = [];
   
@@ -23,8 +26,16 @@ export class ShopComponent {
   
   ngOnInit(){
     this.httpClient.get("assets/json/shop-trades.json").subscribe((data: any) =>{
-      this.shopSell.push(data.sell[0]);
+      let randomTradeFirst = Math.floor(Math.random()*data.sell.length);
+      let randomTradeSecond = Math.floor(Math.random()*data.sell.length);
+      while(randomTradeSecond === randomTradeFirst){
+        randomTradeSecond = Math.floor(Math.random()*data.sell.length);
+      }
+      this.shopSell.push(data.sell[randomTradeFirst]);
+      this.shopSell.push(data.sell[randomTradeSecond]);
       this.shopBuy.push(data.buy[0]);
+      this.shopBuy.push(data.buy[1]);
+
     })
   }
 
@@ -44,5 +55,9 @@ export class ShopComponent {
     }
     this.player[currentTrade.typeGiven] += currentTrade.quantityGiven;
     this.updatedPlayer.emit(this.player);
+  }
+
+  next(): void {
+    this.nextEvent.emit();
   }
 }

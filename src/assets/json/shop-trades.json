@@ -2,27 +2,42 @@
     "sell":[
         {
             "quantityGiven": 1,
-            "typeGiven": "armor",
-            "quantityWanted": 10,
+            "typeGiven": "life",
+            "quantityWanted": 1,
             "typeWanted": "gold"
             
         },{
-            "quantityGiven": 1,
+            "quantityGiven": 4,
             "typeGiven": "life",
             "quantityWanted": 3,
+            "typeWanted": "gold" 
+        },{
+            "quantityGiven": 1,
+            "typeGiven": "food",
+            "quantityWanted": 3,
+            "typeWanted": "gold" 
+        },{
+            "quantityGiven": 1,
+            "typeGiven": "armor",
+            "quantityWanted": 5,
+            "typeWanted": "gold" 
+        },{
+            "quantityGiven": 2,
+            "typeGiven": "experience",
+            "quantityWanted": 5,
             "typeWanted": "gold" 
         }
     ],
     "buy":[
         {
-            "quantityWanted": 1,
+            "quantityWanted": 2,
             "typeWanted": "life",
-            "quantityGiven": 2,
+            "quantityGiven": 1,
             "typeGiven": "gold"
         },{
             "quantityWanted": 1,
             "typeWanted": "armor",
-            "quantityGiven": 4,
+            "quantityGiven": 3,
             "typeGiven": "gold"
         }
     ]

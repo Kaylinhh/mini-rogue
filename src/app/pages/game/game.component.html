@@ -23,3 +23,7 @@
 <div *ngIf="player.status === 'door'">
     <app-map (diceRoll)="mapDice($event)"></app-map>
 </div>
+
+<div *ngIf="player.status === 'rest'">
+    <app-rest></app-rest>
+</div>

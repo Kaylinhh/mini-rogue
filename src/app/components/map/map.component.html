@@ -1,56 +1,27 @@
-<div>
-    <div *ngIf="firstD100 <= 10" [routerLink]="['/game']">
+<div *ngFor="let die of setOfDice">
+    <div *ngIf="die <= 10" [routerLink]="['/game']">
         <img class="card-img" src="assets/img/map-icons/boss.png">
     </div>
 
-    <div *ngIf="firstD100 > 10 && firstD100 <= 20">
+    <div *ngIf="die > 10 && die <= 20">
         <img class="card-img" src="assets/img/map-icons/camp.png">
     </div>
 
-    <div *ngIf="firstD100 > 20 && firstD100 <= 40">
+    <div *ngIf="die > 20 && die <= 40">
         <img class="card-img" src="assets/img/map-icons/loot.png">
     </div>
 
-    <div *ngIf="firstD100 > 40 && firstD100 <= 70">
+    <div *ngIf="die > 40 && die <= 70">
         <img class="card-img" src="assets/img/map-icons/monster.png">
     </div>
 
-    <div *ngIf="firstD100 > 70 && firstD100 <= 80">
+    <div *ngIf="die > 70 && die <= 80">
         <img class="card-img" src="assets/img/map-icons/shop.png">
     </div>
 
-    <div *ngIf="firstD100 > 80">
+    <div *ngIf="die > 80">
         <img class="card-img" src="assets/img/map-icons/trap.png">
     </div>
 
-    <button (click)="goToEvent1()">Select</button>
-</div>
-
-<div>
-    <div *ngIf="secondD100 <= 10">
-        <img class="card-img" src="assets/img/map-icons/boss.png">
-    </div>
-
-    <div *ngIf="secondD100 > 10 && secondD100 <= 20">
-        <img class="card-img" src="assets/img/map-icons/camp.png">
-    </div>
-
-    <div *ngIf="secondD100 > 20 && secondD100 <= 40">
-        <img class="card-img" src="assets/img/map-icons/loot.png">
-    </div>
-
-    <div *ngIf="secondD100 > 40 && secondD100 <= 70">
-        <img class="card-img" src="assets/img/map-icons/monster.png">
-    </div>
-
-    <div *ngIf="secondD100 > 70 && secondD100 <= 80">
-        <img class="card-img" src="assets/img/map-icons/shop.png">
-    </div>
-
-    <div *ngIf="secondD100 > 80">
-        <img class="card-img" src="assets/img/map-icons/trap.png">
-    </div>
-
-    <button (click)="goToEvent2()">Select</button>
-
+    <button (click)="goToEvent(die)">Select</button>
 </div>

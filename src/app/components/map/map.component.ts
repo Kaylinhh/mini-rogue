@@ -14,6 +14,7 @@ export class MapComponent implements OnInit {
   player!: Player;
   firstD100: number = 0;
   secondD100: number = 0;
+  setOfDice: number[] = [];
 
   constructor(
     private playerService: PlayerService
@@ -24,6 +25,7 @@ export class MapComponent implements OnInit {
       this.player = player;
     });
     this.randomEvent();
+    this.setOfDice = [this.firstD100, this.secondD100]
   }
 
   randomEvent(): void {
@@ -31,25 +33,19 @@ export class MapComponent implements OnInit {
     this.secondD100 = Math.floor(Math.random() * 100);
   }
 
-  goToEvent1() {
+  goToEvent(dice: number) {
     if (this.player.status === "door") this.player.status = "encounter";
     else this.player.status = "door";
+    //need to change this, so that when currentEncounter === maxEncounter, we go directly to restEvent and not to map
 
     this.player.currentEncounter += 1;
 
     this.playerService._setPlayer$(this.player);
+    
+    if (this.player.currentEncounter === this.player.maxEncounter +1) this.player.status = "rest";
 
-    this.diceRoll.emit(this.firstD100);
-  }
+    this.diceRoll.emit(dice);
 
-  goToEvent2() {
-    if (this.player.status === "door") this.player.status = "encounter";
-    else this.player.status = "door";
 
-    this.player.currentEncounter += 1;
-
-    this.playerService._setPlayer$(this.player);
-
-    this.diceRoll.emit(this.secondD100);
   }
 }

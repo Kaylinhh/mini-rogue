@@ -34,15 +34,19 @@ export class MapComponent implements OnInit {
   }
 
   goToEvent(dice: number) {
-    if (this.player.status === "door") this.player.status = "encounter";
-    else this.player.status = "door";
-    //need to change this, so that when currentEncounter === maxEncounter, we go directly to restEvent and not to map
 
-    this.player.currentEncounter += 1;
+    if (this.player.currentEncounter < this.player.maxEncounter) {
 
-    this.playerService._setPlayer$(this.player);
-    
-    if (this.player.currentEncounter === this.player.maxEncounter +1) this.player.status = "rest";
+      this.player.status = "encounter";
+      this.player.currentEncounter += 1;
+      this.playerService._setPlayer$(this.player);
+
+    } else {
+
+      this.player.status = "rest";
+      this.playerService._setPlayer$(this.player);
+
+    }
 
     this.diceRoll.emit(dice);
 

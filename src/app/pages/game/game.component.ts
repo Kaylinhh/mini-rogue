@@ -30,7 +30,7 @@ export class GameComponent {
     
     if (this.player.currentEncounter < this.player.maxEncounter) {
 
-      if(this.player.status === "encounter") this.player.status = "door";
+      if (this.player.status === "encounter") this.player.status = "door";
       else this.player.status = "encounter";
       this.playerService._setPlayer$(this.player);
 
@@ -45,10 +45,6 @@ export class GameComponent {
 
   randomEvent(): void {
     this.d100 = Math.floor(Math.random() * 100);
-  }
-
-  updatedPlayerReceive(player: Player): void {
-    this.playerService._setPlayer$(player);
   }
 
   mapDice(event: number): void {

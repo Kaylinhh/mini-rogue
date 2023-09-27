@@ -44,12 +44,12 @@ export class MapComponent implements OnInit {
     } else {
 
       this.player.status = "rest";
+      this.player.currentFloor += 1;
       this.playerService._setPlayer$(this.player);
 
     }
 
     this.diceRoll.emit(dice);
-
-
+    
   }
 }

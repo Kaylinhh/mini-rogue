@@ -11,7 +11,6 @@
     <app-monster *ngIf="d100 > eventPercentageCut[2] && d100 <= eventPercentageCut[3]"></app-monster>
     <app-shop *ngIf="d100 > eventPercentageCut[3] && d100 <= eventPercentageCut[4]"
         [player]="player"
-        (updatedPlayer)="updatedPlayerReceive($event)"
         (nextEvent)="next()"
         ></app-shop>
     <app-trap *ngIf="d100 > eventPercentageCut[4]"

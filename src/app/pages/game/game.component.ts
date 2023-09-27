@@ -27,9 +27,20 @@ export class GameComponent {
   }
 
   next(): void {
-    if(this.player.status === "encounter") this.player.status = "door";
-    else this.player.status = "encounter";
-    this.playerService._setPlayer$(this.player);
+    
+    if (this.player.currentEncounter < this.player.maxEncounter) {
+
+      if(this.player.status === "encounter") this.player.status = "door";
+      else this.player.status = "encounter";
+      this.playerService._setPlayer$(this.player);
+
+    } else {
+
+      this.player.status = "rest";
+      this.playerService._setPlayer$(this.player);
+
+    }
+
   }
 
   randomEvent(): void {

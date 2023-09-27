@@ -1,1 +1,5 @@
-<p>rest works!</p>
+<p>Have a break (have a kitkat) </p>
+
+<p *ngIf="this.player.food < this.foodNeeded">Oh no, you don't have enough food 😔 </p>
+
+<button *ngIf="this.player.food >= this.foodNeeded" (click)="goToNextFloor()">Eat and go to the next floor</button>

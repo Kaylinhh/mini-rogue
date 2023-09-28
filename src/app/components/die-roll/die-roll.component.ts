@@ -17,17 +17,13 @@ export class DieRollComponent {
   @Output()
   whiteDice: EventEmitter<number[]> = new EventEmitter;
 
-  ngOnInit(): void {
+  roll(): void {
     this.blackDie.emit(Math.floor(Math.random()*6)+1);
     let whiteDiceGeneration: number[] = [];
     for(let i = 0; i < this.player.die; i++){
       whiteDiceGeneration.push(Math.floor(Math.random()*6)+1);
     }
     this.whiteDice.emit(whiteDiceGeneration);
-  }
-
-  roll(): void {
-    //
   }
 
 }

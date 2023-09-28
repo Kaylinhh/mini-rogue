@@ -26,19 +26,18 @@ export class TrapComponent {
 
   currentLineEffect: number = -1;
 
+  canProceed: boolean = false;
+
   constructor(private httpClient: HttpClient){}
 
   ngOnInit(): void {
     this.httpClient.get("assets/json/traps.json").subscribe((data: any) => {
-      this.currentTrap = data[this.player.currentZone-1][Math.floor(Math.random()*data[this.player.currentZone-1].length)];
-      let blackDieRolled: number = Math.floor(Math.random()*6)+1;
-      for(let i = 0; i < this.currentTrap.linesOfEffect.length; i++){
-        if(this.currentTrap.linesOfEffect[i].blackDie.includes(blackDieRolled)){
-          this.currentLineEffect = i;
-          break;
-        }
-      }
+      this.currentTrap = data[this.player.currentZone-1][Math.floor(Math.random()*data[this.player.currentZone-1].length)];   
     });
+  }
+
+  proceed(): void {
+    this.canProceed = true;
   }
 
   next(): void {
@@ -47,10 +46,17 @@ export class TrapComponent {
 
   blackDieReceive(pips: number): void {
     this.blackDie = pips;
+    for(let i = 0; i < this.currentTrap.linesOfEffect.length; i++){
+      if(this.currentTrap.linesOfEffect[i].blackDie.includes(this.blackDie)){
+        this.currentLineEffect = i;
+        break;
+      }
+    }
   }
 
   whiteDiceReceive(dice: number[]): void {
     this.whiteDice = dice;
+    this.isWhiteDiceSucced = false;
     for(let i = 0; i < dice.length; i++){
       if(dice[i] >= 5) this.isWhiteDiceSucced = true;
     }

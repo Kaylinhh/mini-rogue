@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Repos au calme",
+        "description": "...dodo",
+        "reward": {
+            "quantity": 1,
+            "type": "life"
+        }
+    },{
+        "name": "Méditation",
+        "description": "...pour apprendre",
+        "reward": {
+            "quantity": 1,
+            "type": "experience"
+        }
+    },{
+        "name": "Création de babioles",
+        "description": "...trucs à vendre",
+        "reward": {
+            "quantity": 1,
+            "type": "gold"
+        }
+    },{
+        "name": "Chasser",
+        "description": "...miam",
+        "reward": {
+            "quantity": 1,
+            "type": "food"
+        }
+    },{
+        "name": "S'entraîner",
+        "description": "...pour dodge",
+        "reward": {
+            "quantity": 1,
+            "type": "armor"
+        }
+    }
+]

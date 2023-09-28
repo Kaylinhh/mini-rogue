@@ -1,10 +1,13 @@
 <div *ngIf="currentTrap">
-    <app-die-roll [player]="player" (blackDie)="blackDieReceive($event)" (whiteDice)="whiteDiceReceive($event)"></app-die-roll>
     <h1>{{ currentTrap.name }}</h1>
     <img [src]="'../../../../assets/img/encounters/trap/zone-' + player.currentZone + '/' + currentTrap.id + '.png'">
     <p>{{ currentTrap.description }}</p>
     <p *ngIf="currentLineEffect !== -1">{{ currentTrap.linesOfEffect[currentLineEffect].negativeText }}</p>
     <p *ngIf="isWhiteDiceSucced">{{ currentTrap.linesOfEffect[currentLineEffect].positiveText }}</p>
-    <p>blackDie:{{ blackDie }} / whiteDice:{{ whiteDice }}</p>
-    <button (click)="next()">Poursuivre</button>
+    <p *ngIf="blackDie">blackDie:{{ blackDie }} / whiteDice:{{ whiteDice }}</p>
+
+    <app-die-roll [player]="player" (blackDie)="blackDieReceive($event)" (whiteDice)="whiteDiceReceive($event)"></app-die-roll>
+
+    <button *ngIf="blackDie && !canProceed" (click)="proceed()">Appliquer</button>
+    <button *ngIf="canProceed" (click)="next()">Poursuivre</button>
 </div>

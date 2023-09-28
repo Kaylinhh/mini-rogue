@@ -10,7 +10,7 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 export class RestComponent {
 
   player!: Player;
-  foodNeeded: number = 4;
+  foodNeeded: number = 1;
   d100: number = 0;
 
   constructor(
@@ -34,7 +34,7 @@ export class RestComponent {
       this.player.currentEncounter = 1;
       this.playerService._setPlayer$(this.player);
     } else {
-
+      this.player.life -= 5;
     }
 
   }

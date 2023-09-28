@@ -5,7 +5,7 @@
 <button (click)="randomEvent()">Change event</button>
 
 <div *ngIf="player.status === 'encounter'">
-    <app-boss *ngIf="d100 <= eventPercentageCut[0]"></app-boss>
+    <!-- <app-boss *ngIf="d100 <= eventPercentageCut[0]"></app-boss> -->
     <app-camp *ngIf="d100 > eventPercentageCut[0] && d100 <= eventPercentageCut[1]"></app-camp>
     <app-loot *ngIf="d100 > eventPercentageCut[1] && d100 <= eventPercentageCut[2]"></app-loot>
     <app-monster *ngIf="d100 > eventPercentageCut[2] && d100 <= eventPercentageCut[3]"></app-monster>

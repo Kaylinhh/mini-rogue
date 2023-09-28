@@ -6,7 +6,7 @@ import { Monster } from 'src/app/models/monster.model';
 @Injectable({
     providedIn: 'root'
 })
-export class eventService {
+export class EventService {
 
     eventPercentageCut = [10,40,70,80];
 

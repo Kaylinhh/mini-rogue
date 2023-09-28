@@ -1,3 +1,4 @@
+import { EventService } from './../../shared/services/events.service';
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { PlayerService } from 'src/app/shared/services/player.service';
@@ -16,7 +17,8 @@ export class GameComponent {
   eventPercentageCut: number[] = [10,40,70,80];
 
   constructor(
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    private eventService: EventService
   ){}
 
   ngOnInit(): void {

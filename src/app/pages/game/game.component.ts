@@ -11,7 +11,7 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 export class GameComponent {
 
   player!: Player;
-
+  event: string = "";
   d100: number = 0;
 
   eventPercentageCut: number[] = [10,40,70,80];
@@ -26,6 +26,10 @@ export class GameComponent {
       this.player = player;
     });
     this.randomEvent();
+    this.event = this.eventService.generateEncounter();
+  }
+
+  newEncounter() {
   }
 
   next(): void {

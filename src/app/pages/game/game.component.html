@@ -8,8 +8,12 @@
     <app-boss *ngIf="d100 === -1"></app-boss>
     <app-camp *ngIf="d100 > -1 && d100 <= eventPercentageCut[0]"
         [player]="player"
+        (nextEvent)="next()"
         ></app-camp>
-    <app-loot *ngIf="d100 > eventPercentageCut[0] && d100 <= eventPercentageCut[1]"></app-loot>
+    <app-loot *ngIf="d100 > eventPercentageCut[0] && d100 <= eventPercentageCut[1]"
+        [player]="player"
+        (nextEvent)="next()"
+        ></app-loot>
     <app-monster *ngIf="d100 > eventPercentageCut[1] && d100 <= eventPercentageCut[2]"></app-monster>
     <app-shop *ngIf="d100 > eventPercentageCut[2] && d100 <= eventPercentageCut[3]"
         [player]="player"

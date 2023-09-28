@@ -15,9 +15,11 @@ export class CampComponent {
   player!: Player;
 
   @Output()
-  playerEmitter: EventEmitter<Player> = new EventEmitter;
+  nextEvent: EventEmitter<void> = new EventEmitter;
 
   currentCamp: CampChoice[] = [];
+
+  isChoiceMade: boolean = false;
 
   constructor(private httpClient: HttpClient){}
 
@@ -37,7 +39,11 @@ export class CampComponent {
 
   choosed(quantity: number, type: "life" | "experience" | "gold" | "food" | "armor"): void {
     this.player[type] += quantity;
-    this.playerEmitter.emit(this.player);
+    this.isChoiceMade = true;
+  }
+
+  next(): void {
+    this.nextEvent.emit();
   }
 
 }

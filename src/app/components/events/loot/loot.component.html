@@ -1,1 +1,6 @@
-<p>loot works!</p>
+<div>
+    <h1>Coffre aux trésors</h1>
+    <p>Vous trouvez...</p>
+    <p *ngFor="let loot of currentLoot">{{ loot.quantity }} {{ loot.type }}</p>
+    <button (click)="next()">Poursuivre</button>
+</div>

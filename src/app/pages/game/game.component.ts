@@ -13,7 +13,7 @@ export class GameComponent {
 
   d100: number = 0;
 
-  eventPercentageCut: number[] = [10,20,40,70,80];
+  eventPercentageCut: number[] = [10,40,70,80];
 
   constructor(
     private playerService: PlayerService

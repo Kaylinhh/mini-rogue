@@ -19,14 +19,6 @@
         ></app-trap>
 </div>
 
-<div *ngIf="player.status === 'door'">
-    <app-map (diceRoll)="mapDice($event)"></app-map>
-</div>
-
-<div *ngIf="player.status === 'rest'">
-    <app-rest></app-rest>
-</div>
-
-<div *ngIf="player.status === 'boss'">
-    <app-boss></app-boss>
-</div>
+    <app-map *ngIf="player.status === 'door'" (diceRoll)="mapDice($event)"></app-map>
+    <app-rest *ngIf="player.status === 'rest'"></app-rest>
+    <app-boss *ngIf="player.status === 'boss'"></app-boss>

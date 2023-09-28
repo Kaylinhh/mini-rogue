@@ -1,35 +1,614 @@
 [
     [{
         "id": 1,
-        "name": "Spikes",
-        "description": "Des petits picots quoi, rien de bien méchant èé",
+        "name": "Jungle luxuriante",
+        "description": "XXX...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2],
-                "precisionLabel": "very sharped"
+                "negativeText": "...very sharped",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
             },
             {
                 "blackDie": [3,4],
-                "precisionLabel": "with poison"
+                "negativeText": "...with poison",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
             },
             {
                 "blackDie": [5,6],
-                "precisionLabel": "...deadly"
+                "negativeText": "...deadly",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
             }
         ]
     },
     {
         "id": 2,
-        "name": "Rocks",
-        "description": "De la caillasse",
+        "name": "Enchevêtrement de lianes",
+        "description": "XXX...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "precisionLabel": "small"
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
             },
             {
                 "blackDie": [5,6],
-                "precisionLabel": "large"
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 3,
+        "name": "Temple sacrificiel",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 4,
+        "name": "Pyramide labyrinthique",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 5,
+        "name": "Maraicages infestés",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 6,
+        "name": "Fleurs intriguantes",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 7,
+        "name": "Canyon encaissé",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 8,
+        "name": "Totems et amulettes",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 9,
+        "name": "Désert aride",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 10,
+        "name": "Pont suspendu",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 11,
+        "name": "Caches troglodytes",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    }]
+    ,
+    [{
+        "id": 1,
+        "name": "Forêt brumeuse",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 2,
+        "name": "Cercle de pierres",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 3,
+        "name": "Château en ruine",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 4,
+        "name": "Manoir spectral",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 5,
+        "name": "Église gothique",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 6,
+        "name": "Pont de pierres",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 7,
+        "name": "Tour isolée",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 8,
+        "name": "Falaise abrupte",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 9,
+        "name": "Crypte obscure",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 10,
+        "name": "Campement glacial",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    }]
+    ,
+    [{
+        "id": 1,
+        "name": "Chemin escarpé",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 2,
+        "name": "Mont lointain",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 3,
+        "name": "Porte runique",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 4,
+        "name": "Lotus instables",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 5,
+        "name": "Temple désert",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 6,
+        "name": "Temple des ombres",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 7,
+        "name": "Pont exposé",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 8,
+        "name": "Aiguilles acérées",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            }
+        ]
+    },{
+        "id": 9,
+        "name": "Port trop clame",
+        "description": "XXX...",
+        "linesOfEffect": [
+            {
+                "blackDie": [1,2,3,4],
+                "negativeText": "...small",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
+            },
+            {
+                "blackDie": [5,6],
+                "negativeText": "...large",
+                "positiveText": "...small",
+                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"gold"}]
             }
         ]
     }]

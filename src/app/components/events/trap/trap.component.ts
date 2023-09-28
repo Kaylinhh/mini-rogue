@@ -16,6 +16,12 @@ export class TrapComponent {
   @Output()
   nextEvent: EventEmitter<void> = new EventEmitter;
 
+  blackDie!: number;
+
+  whiteDice!: number[];
+
+  isWhiteDiceSucced: boolean = false;
+
   currentTrap!: Trap;
 
   currentLineEffect: number = -1;
@@ -37,6 +43,17 @@ export class TrapComponent {
 
   next(): void {
     this.nextEvent.emit();
+  }
+
+  blackDieReceive(pips: number): void {
+    this.blackDie = pips;
+  }
+
+  whiteDiceReceive(dice: number[]): void {
+    this.whiteDice = dice;
+    for(let i = 0; i < dice.length; i++){
+      if(dice[i] >= 5) this.isWhiteDiceSucced = true;
+    }
   }
 
 }

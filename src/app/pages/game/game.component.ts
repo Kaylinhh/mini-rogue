@@ -1,3 +1,4 @@
+import { EventService } from './../../shared/services/events.service';
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { PlayerService } from 'src/app/shared/services/player.service';
@@ -10,20 +11,19 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 export class GameComponent {
 
   player!: Player;
+  event: string = "";
 
-  d100: number = 0;
-
-  eventPercentageCut: number[] = [10,40,70,80];
 
   constructor(
-    private playerService: PlayerService
+    private playerService: PlayerService,
+    private eventService: EventService
   ){}
 
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
     });
-    this.randomEvent();
+    this.event = this.eventService.generateEncounter();
   }
 
   next(): void {
@@ -43,11 +43,11 @@ export class GameComponent {
 
   }
 
-  randomEvent(): void {
-    this.d100 = Math.floor(Math.random() * 100);
+  currentEncounter(event: string): void {
+    this.event = event;
   }
 
-  mapDice(event: number): void {
-    this.d100 = event;
+  randomEvent(): void { //to be deleted
+    this.event = this.eventService.generateEncounter();
   }
 }

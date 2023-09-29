@@ -5,34 +5,23 @@
 <button (click)="randomEvent()">Change event</button>
 
 <div *ngIf="player.status === 'encounter'">
-    <app-boss *ngIf="d100 === -1"></app-boss>
-    <app-camp *ngIf="d100 > -1 && d100 <= eventPercentageCut[0]"
+    <app-boss *ngIf="this.event === 'boss'"></app-boss>
+    <app-camp *ngIf="this.event === 'camp'"
         [player]="player"
         (nextEvent)="next()"
         ></app-camp>
-    <app-loot *ngIf="d100 > eventPercentageCut[0] && d100 <= eventPercentageCut[1]"
-        [player]="player"
-        (nextEvent)="next()"
-        ></app-loot>
-    <app-monster *ngIf="d100 > eventPercentageCut[1] && d100 <= eventPercentageCut[2]"></app-monster>
-    <app-shop *ngIf="d100 > eventPercentageCut[2] && d100 <= eventPercentageCut[3]"
+    <app-loot *ngIf="this.event === 'loot'"></app-loot>
+    <app-monster *ngIf="this.event === 'monster'"></app-monster>
+    <app-shop *ngIf="this.event === 'shop'"
         [player]="player"
         (nextEvent)="next()"
         ></app-shop>
-    <app-trap *ngIf="d100 > eventPercentageCut[3]"
+    <app-trap *ngIf="this.event === 'trap'"
         [player]="player"
         (nextEvent)="next()"
         ></app-trap>
 </div>
 
-<div *ngIf="player.status === 'door'">
-    <app-map (diceRoll)="mapDice($event)"></app-map>
-</div>
-
-<div *ngIf="player.status === 'rest'">
-    <app-rest></app-rest>
-</div>
-
-<div *ngIf="player.status === 'boss'">
-    <app-boss></app-boss>
-</div>
+    <app-map *ngIf="player.status === 'door'" (chosenEncounter)="currentEncounter($event)"></app-map>
+    <app-rest *ngIf="player.status === 'rest'"></app-rest>
+    <app-boss *ngIf="player.status === 'boss'"></app-boss>

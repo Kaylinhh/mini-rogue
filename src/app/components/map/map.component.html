@@ -1,27 +1,24 @@
-<div *ngFor="let die of setOfDice">
-    <div *ngIf="die <= 10" [routerLink]="['/game']">
-        <img class="card-img" src="assets/img/map-icons/boss.png">
-    </div>
+<div *ngFor="let encounter of encounterList">
 
-    <div *ngIf="die > 10 && die <= 20">
+    <div *ngIf="encounter === 'camp'">
         <img class="card-img" src="assets/img/map-icons/camp.png">
     </div>
 
-    <div *ngIf="die > 20 && die <= 40">
+    <div *ngIf="encounter === 'loot'">
         <img class="card-img" src="assets/img/map-icons/loot.png">
     </div>
 
-    <div *ngIf="die > 40 && die <= 70">
+    <div *ngIf="encounter === 'monster'">
         <img class="card-img" src="assets/img/map-icons/monster.png">
     </div>
 
-    <div *ngIf="die > 70 && die <= 80">
+    <div *ngIf="encounter === 'shop'">
         <img class="card-img" src="assets/img/map-icons/shop.png">
     </div>
 
-    <div *ngIf="die > 80">
+    <div *ngIf="encounter === 'trap'">
         <img class="card-img" src="assets/img/map-icons/trap.png">
     </div>
 
-    <button (click)="goToEvent(die)">Select</button>
+    <button (click)="goToEncounter(encounter)">Select</button>
 </div>

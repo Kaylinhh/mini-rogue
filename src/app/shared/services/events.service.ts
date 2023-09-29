@@ -6,7 +6,9 @@ import { Monster } from 'src/app/models/monster.model';
 @Injectable({
     providedIn: 'root'
 })
-export class eventService {
+export class EventService {
+
+    eventPercentageCut = [10,40,70,80];
 
     constructor(private http: HttpClient) { }
 
@@ -15,6 +17,26 @@ export class eventService {
         .pipe(
             map(json => json.data)
         )
+    }
+
+    generateEncounter(): string {
+        let encounter = Math.floor(Math.random() * 100);
+
+        if (encounter <= this.eventPercentageCut[0]) {
+            return "camp";
+        } else if (encounter === -1) {
+            return "boss"; //remember to delete this when boss is done
+        
+        } else if (encounter >  this.eventPercentageCut[0] && encounter <= this.eventPercentageCut[1]) {
+            return "loot";
+        } else if (encounter >  this.eventPercentageCut[1] && encounter <= this.eventPercentageCut[2]) {
+            return "monster";
+        } else if (encounter >  this.eventPercentageCut[2] && encounter <= this.eventPercentageCut[3]) {
+            return "shop";
+        } else {
+            return "trap";
+        }
+
     }
 
 }

@@ -2,6 +2,7 @@
     <div *ngFor="let line of currentCamp">
         <h2>{{ line.name }}</h2>
         <p>{{ line.description }}</p>
-        <button (click)="choosed(line.reward.quantity, line.reward.type)">{{ line.reward.quantity }} {{ line.reward.type }}</button>
+        <button *ngIf="!isChoiceMade" (click)="choosed(line.reward.quantity, line.reward.type)">{{ line.reward.quantity }} {{ line.reward.type }}</button>
     </div>
+    <button *ngIf="isChoiceMade" (click)="next()">Poursuivre</button>
 </div>

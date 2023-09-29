@@ -8,6 +8,7 @@
     <app-boss *ngIf="d100 === -1"></app-boss>
     <app-camp *ngIf="this.event === 'camp'"
         [player]="player"
+        (nextEvent)="next()"
         ></app-camp>
     <app-loot *ngIf="this.event === 'loot'"></app-loot>
     <app-monster *ngIf="this.event === 'monster'"></app-monster>

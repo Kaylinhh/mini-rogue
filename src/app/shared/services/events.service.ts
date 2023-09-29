@@ -24,6 +24,9 @@ export class EventService {
 
         if (encounter <= this.eventPercentageCut[0]) {
             return "camp";
+        } else if (encounter === -1) {
+            return "boss"; //remember to delete this when boss is done
+        
         } else if (encounter >  this.eventPercentageCut[0] && encounter <= this.eventPercentageCut[1]) {
             return "loot";
         } else if (encounter >  this.eventPercentageCut[1] && encounter <= this.eventPercentageCut[2]) {

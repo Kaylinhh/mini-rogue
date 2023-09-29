@@ -12,9 +12,7 @@ export class GameComponent {
 
   player!: Player;
   event: string = "";
-  d100: number = 0;
 
-  eventPercentageCut: number[] = [10,40,70,80];
 
   constructor(
     private playerService: PlayerService,
@@ -25,11 +23,7 @@ export class GameComponent {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
     });
-    this.randomEvent();
     this.event = this.eventService.generateEncounter();
-  }
-
-  newEncounter() {
   }
 
   next(): void {
@@ -49,11 +43,11 @@ export class GameComponent {
 
   }
 
-  randomEvent(): void {
-    this.d100 = Math.floor(Math.random() * 100);
+  currentEncounter(event: string): void {
+    this.event = event;
   }
 
-  mapDice(event: number): void {
-    this.d100 = event;
+  randomEvent(): void { //to be deleted
+    this.event = this.eventService.generateEncounter();
   }
 }

@@ -10,13 +10,12 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 })
 export class MapComponent implements OnInit {
 
-  @Output() diceRoll: EventEmitter<number> = new EventEmitter();
+  @Output() chosenEncounter: EventEmitter<string> = new EventEmitter();
 
   player!: Player;
-  event: string = "";
-  firstD100: number = 0;
-  secondD100: number = 0;
-  setOfDice: number[] = [];
+  encounter1: string = "";
+  encounter2: string = "";
+  encounterList: string[] = [];
 
   constructor(
     private playerService: PlayerService,
@@ -27,17 +26,21 @@ export class MapComponent implements OnInit {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
     });
-    this.randomEvent();
-    this.setOfDice = [this.firstD100, this.secondD100]
-    this.event = this.eventService.generateEncounter();
+    this.generateDoors();
   }
 
-  randomEvent(): void {
-    this.firstD100 = Math.floor(Math.random() * 100);
-    this.secondD100 = Math.floor(Math.random() * 100);
+  generateDoors() {
+    this.encounter1 = this.eventService.generateEncounter();
+    this.encounter2 = this.encounter1;
+
+    while (this.encounter2 === this.encounter1) {
+      this.encounter2 = this.eventService.generateEncounter()
+    }
+
+    this.encounterList = [this.encounter1, this.encounter2]
   }
 
-  goToEvent(dice: number) {
+  goToEncounter(encounter: string) {
 
     if (this.player.currentEncounter < this.player.maxEncounter) {
 
@@ -53,7 +56,7 @@ export class MapComponent implements OnInit {
 
     }
 
-    this.diceRoll.emit(dice);
+    this.chosenEncounter.emit(encounter);
     
   }
 }

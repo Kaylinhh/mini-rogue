@@ -1,4 +1,3 @@
-import { PlayerService } from 'src/app/shared/services/player.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
@@ -13,7 +12,7 @@ export class EventService {
     eventPercentageCut = [10, 40, 70, 80];
     foodNeeded: number = 1;
 
-    constructor(private http: HttpClient, private playerService: PlayerService) { }
+    constructor(private http: HttpClient) { }
 
     _getMonsters$(): Observable<any> {
         return this.http.get<any>("/assets/json/monsters.json")
@@ -41,7 +40,7 @@ export class EventService {
         }
     }
 
-    goToEncounter(player: Player): void {
+    goToEncounter(player: Player): void { //to be improved
         if (player.currentEncounter < player.maxEncounter) {
 
             if (player.status === "encounter") {
@@ -61,19 +60,9 @@ export class EventService {
             player.status = "rest";
             player.currentFloor += 1;
         }
-
-        // switch (true) {
-        //     case player.status === "encounter":
-        //         player.status = "door";
-        //         break;
-        //     case player.status === "door":
-        //         player.status = "encounter";
-        //         player.currentEncounter += 1;
-        //         break;
-        // }
     }
 
-    goToFloor(player: Player) {
+    goToFloor (player: Player) {
         if (player.food >= this.foodNeeded) {
             player.status = "encounter";
             player.food -= this.foodNeeded;
@@ -82,5 +71,4 @@ export class EventService {
             player.life -= 5;
         }
     }
-
 }

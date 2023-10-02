@@ -24,11 +24,9 @@ ngOnInit(): void {
     this.player = player;
     this.event = this.eventService.generateEncounter();
   });
-
 }
 
-goToNextFloor() {
-
+goToNextFloor(): void {
   this.eventService.goToFloor(this.player);
   this.playerService._setPlayer$(this.player);
 }

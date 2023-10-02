@@ -5,7 +5,6 @@
 <button (click)="randomEvent()">Change event</button>
 
 <div *ngIf="player.status === 'encounter'">
-    <app-boss *ngIf="this.event === 'boss'"></app-boss>
     <app-camp *ngIf="this.event === 'camp'"
         [player]="player"
         (nextEvent)="next()"
@@ -23,5 +22,5 @@
 </div>
 
     <app-map *ngIf="player.status === 'door'" (chosenEncounter)="currentEncounter($event)"></app-map>
-    <app-rest *ngIf="player.status === 'rest'"></app-rest>
     <app-boss *ngIf="player.status === 'boss'"></app-boss>
+    <app-rest *ngIf="player.status === 'rest'"></app-rest>

@@ -17,7 +17,7 @@ export class GameComponent {
   constructor(
     private playerService: PlayerService,
     private eventService: EventService
-  ){}
+  ) { }
 
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
@@ -27,20 +27,7 @@ export class GameComponent {
   }
 
   next(): void {
-    
-    if (this.player.currentEncounter < this.player.maxEncounter) {
-
-      if (this.player.status === "encounter") this.player.status = "door";
-      else this.player.status = "encounter";
-      this.playerService._setPlayer$(this.player);
-
-    } else {
-
-      this.player.status = "rest";
-      this.playerService._setPlayer$(this.player);
-
-    }
-
+    this.eventService.goToEncounter(this.player);
   }
 
   currentEncounter(event: string): void {

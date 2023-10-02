@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Monster } from 'src/app/models/monster.model';
 import { Player } from 'src/app/models/player.model';
 import { MonsterService } from 'src/app/shared/services/monster.service';
@@ -14,28 +15,15 @@ export class MonsterComponent implements OnInit {
   @Input() player!: Player;
 
   monster!: Monster;
-  monsterList!: Monster[];
+  monsterList$!: Observable<Monster[]>;
+
 
   constructor(private monsterService: MonsterService) {
-    this.monsterList = [];
   }
 
   ngOnInit(): void {
-    this.monsterService.getMonstersByZone$(this.player.currentZone).subscribe(data => {
-      this.monsterList = data;
-      console.log(this.monsterList);
-    });
-    console.log(this.monsterList);
+    this.monsterList$ = this.monsterService.getMonstersByZone$(this.player.currentZone);
+    };
   }
 
-  // //to get random monster, need random index from monsterList
-  // currentMonster(){
-  //   let currentIndex = Math.floor(Math.random() * this.monsterList.length);
-  //   console.log(currentIndex);
 
-  //   this.monster = this.monsterList[currentIndex];
-  //   console.log(this.monster);
-  //}
-
-
-}

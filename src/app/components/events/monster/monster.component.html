@@ -1,6 +1,6 @@
 <h1>oh no un monstre</h1>
 <div>
-    <div>
+    <div *ngFor="let monster of monsterList$ | async">
         {{ monster.name }}
         PV: {{ monster.life }}
         ATK: {{ monster.damage }} 

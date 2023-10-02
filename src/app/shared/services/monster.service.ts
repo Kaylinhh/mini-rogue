@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, filter, map, tap } from 'rxjs';
 import { Boss } from 'src/app/models/boss.model';
 import { Monster } from 'src/app/models/monster.model';
 
@@ -21,15 +21,28 @@ export class MonsterService {
     }
 
     get bossByZone$(): Observable<Monster[]> {
-        return this._bossesByZoneSubject$.asObservable();
+        return this._monstersByZoneSubject$.asObservable();
     }
 
+    // getMonstersByZone$(zone: number): Observable<Monster[]> {
+    //     this.monster
+    //       .subscribe(monster => {
+    //         this._monstersByZoneSubject$.next(monster.filter(monster => monster.zoneNumber === zone) as Monster[])
+    //       });
+    //     return this._monstersByZoneSubject$.asObservable();
+    // }
+
+
     getMonstersByZone$(zone: number): Observable<Monster[]> {
-        this.monster
-          .subscribe(monster => {
-            this._monstersByZoneSubject$.next(monster.filter(monster => monster.zoneNumber === zone) as Monster[])
-          });
-        return this._monstersByZoneSubject$.asObservable();
+      return this.monster.pipe(
+        map((monsters: Monster[]) => monsters.filter(monster => monster.zoneNumber === zone)),
+        map((filteredMonsters: Monster[]) => {
+          const randomIndex = Math.floor(Math.random() * filteredMonsters.length);
+          console.log(randomIndex, filteredMonsters);
+                    
+          return [filteredMonsters[randomIndex]];
+        })
+      );
     }
     
     getBossByZone$(zone: number): Observable<Boss[]> {

@@ -12,15 +12,6 @@ export class EventService {
     eventPercentageCut = [10, 40, 70, 80];
     foodNeeded: number = 1;
 
-    constructor(private http: HttpClient) { }
-
-    _getMonsters$(): Observable<any> {
-        return this.http.get<any>("/assets/json/monsters.json")
-            .pipe(
-                map(json => json.data)
-            )
-    }
-
     generateEncounter(): string {
         let encounter = Math.floor(Math.random() * 100);
 

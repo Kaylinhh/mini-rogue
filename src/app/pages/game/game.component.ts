@@ -13,7 +13,6 @@ export class GameComponent {
   player!: Player;
   event: string = "";
 
-
   constructor(
     private playerService: PlayerService,
     private eventService: EventService

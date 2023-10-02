@@ -20,7 +20,7 @@ export class MapComponent implements OnInit {
   constructor(
     private playerService: PlayerService,
     private eventService: EventService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
@@ -36,27 +36,12 @@ export class MapComponent implements OnInit {
     while (this.encounter2 === this.encounter1) {
       this.encounter2 = this.eventService.generateEncounter()
     }
-
     this.encounterList = [this.encounter1, this.encounter2]
   }
 
   goToEncounter(encounter: string) {
-
-    if (this.player.currentEncounter < this.player.maxEncounter) {
-
-      this.player.status = "encounter";
-      this.player.currentEncounter += 1;
-      this.playerService._setPlayer$(this.player);
-
-    } else {
-
-      this.player.status = "rest";
-      this.player.currentFloor += 1;
-      this.playerService._setPlayer$(this.player);
-
-    }
-
+    this.eventService.goToEncounter(this.player);
+    this.playerService._setPlayer$(this.player);
     this.chosenEncounter.emit(encounter);
-    
   }
 }

@@ -1,3 +1,4 @@
+import { EventService } from 'src/app/shared/services/events.service';
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { PlayerService } from 'src/app/shared/services/player.service';
@@ -11,31 +12,22 @@ export class RestComponent {
 
   player!: Player;
   foodNeeded: number = 1;
-  d100: number = 0;
+  event: string = "";
 
   constructor(
-    private playerService: PlayerService
-  ){}
-  
-  ngOnInit(): void {
-    this.playerService._getPlayer$().subscribe((player: Player) => {
-      this.player = player;
-    });
-    this.d100 = Math.floor(Math.random() * 100);
-    
-  }
+  private playerService: PlayerService,
+  private eventService: EventService
+  ){ }
 
-  goToNextFloor() {
+ngOnInit(): void {
+  this.playerService._getPlayer$().subscribe((player: Player) => {
+    this.player = player;
+    this.event = this.eventService.generateEncounter();
+  });
+}
 
-    if (this.player.food >= this.foodNeeded) {
-      this.player.status = "encounter";
-      this.player.food -= this.foodNeeded;
-      this.player.currentFloor += 1;
-      this.player.currentEncounter = 1;
-      this.playerService._setPlayer$(this.player);
-    } else {
-      this.player.life -= 5;
-    }
-
-  }
+goToNextFloor(): void {
+  this.eventService.goToFloor(this.player);
+  this.playerService._setPlayer$(this.player);
+}
 }

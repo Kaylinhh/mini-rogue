@@ -8,7 +8,7 @@ import { LocalStorageService } from './local-storage.service';
 })
 export class PlayerService {
 
-  private readonly _player$: BehaviorSubject<Player> = new BehaviorSubject<Player>(new Player(10,0,10,5,0,[],[],1,"encounter",1,4,1,7,1,[2,4,7]));
+  private readonly _player$: BehaviorSubject<Player> = new BehaviorSubject<Player>(new Player(10,0,10,5,0,[],[],1,"encounter",1,4,1,7,1,[1,4,7]));
 
   constructor(private lss: LocalStorageService) { }
 

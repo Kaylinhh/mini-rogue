@@ -13,7 +13,7 @@
         [player]="player"
         (nextEvent)="next()"
     ></app-loot>
-    <app-monster *ngIf="this.event === 'monster'" [player]="player"></app-monster>
+    <app-monster *ngIf="this.event === 'monster'" [player]="player" (nextEvent)="next()"></app-monster>
     <app-shop *ngIf="this.event === 'shop'"
         [player]="player"
         (nextEvent)="next()"
@@ -25,5 +25,5 @@
 </div>
 
     <app-map *ngIf="player.status === 'door'" (chosenEncounter)="currentEncounter($event)"></app-map>
-    <app-boss *ngIf="player.status === 'boss'"></app-boss>
+    <app-boss *ngIf="player.status === 'boss'" [player]="player" (nextEvent)="next()"></app-boss>
     <app-rest *ngIf="player.status === 'rest'"></app-rest>

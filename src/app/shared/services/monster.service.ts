@@ -12,9 +12,6 @@ export class MonsterService {
 
   monster: Observable<Monster[]> = this.http.get<Monster[]>("/assets/json/monsters.json");
   boss: Observable<Boss[]> = this.http.get<Boss[]>("/assets/json/bosses.json");
-  player!: Player;
-  playerDieRoll: number = 0;
-  monsterDieRoll: number = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -40,17 +37,19 @@ export class MonsterService {
     );
   }
 
-  fight(enemy: Monster | Boss) {
-        
+  fight(player: Player, enemy: Monster | Boss) {
+    let playerD6: number = 0;
+    let enemyD6: number = 0;
+
     // Player attacks (first), then monster attacks => one round
-    while (this.player.life > 0 && enemy.life > 0) {
-      this.playerDieRoll = Math.ceil(Math.random() * 6);
-      this.monsterDieRoll = Math.ceil(Math.random() * 6);
+    while (player.life > 0 && enemy.life > 0) {
+      playerD6 = Math.ceil(Math.random() * 6);
+      enemyD6 = Math.ceil(Math.random() * 6);
       
       //they need to succeed on their diceRoll to hit
-      if(this.playerDieRoll >= 3) enemy.life -= 2; //player's dmg to be discussed
-      if(this.monsterDieRoll === 5) this.player.life -= this.player.armor - enemy.damage;      
-      if(this.monsterDieRoll === 6) this.player.life -= enemy.damage; //ignores armor on crit
+      if(playerD6 >= 3) enemy.life -= 2; //player's dmg to be discussed
+      if(enemyD6 === 5) player.life -= player.armor - enemy.damage;      
+      if(enemyD6 === 6) player.life -= enemy.damage; //ignores armor on crit
     }
   }
 

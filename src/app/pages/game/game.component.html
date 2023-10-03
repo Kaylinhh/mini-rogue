@@ -9,7 +9,10 @@
         [player]="player"
         (nextEvent)="next()"
         ></app-camp>
-    <app-loot *ngIf="this.event === 'loot'"></app-loot>
+    <app-loot *ngIf="this.event === 'loot'"
+        [player]="player"
+        (nextEvent)="next()"
+    ></app-loot>
     <app-monster *ngIf="this.event === 'monster'" [player]="player"></app-monster>
     <app-shop *ngIf="this.event === 'shop'"
         [player]="player"

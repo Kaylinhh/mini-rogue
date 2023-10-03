@@ -6,7 +6,7 @@ import { ShopOffer } from 'src/app/models/shop-offer.model';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.scss']
+  styleUrls: ['./shop.component.scss', './../../../pages/game/game.component.scss']
 })
 export class ShopComponent {
 

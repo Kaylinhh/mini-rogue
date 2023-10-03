@@ -1,6 +1,7 @@
 import { EventService } from './../../shared/services/events.service';
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class GameComponent {
 
   constructor(
     private playerService: PlayerService,
-    private eventService: EventService
+    private eventService: EventService,
+    private lss: LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class GameComponent {
   }
 
   next(): void {
+    this.lss.save(this.player);
     this.eventService.goToEncounter(this.player);
   }
 

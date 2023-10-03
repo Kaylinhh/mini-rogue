@@ -7,16 +7,16 @@
         </tr>
         <tr *ngFor="let line of [].constructor(2); let i = index">
             <td *ngIf="shopSell[i]">{{ shopSell[i].quantityWanted }}</td>
-            <td *ngIf="shopSell[i]">{{ shopSell[i].typeWanted }}</td>   
+            <td *ngIf="shopSell[i]"><img [src]="'assets/img/logo/'+shopSell[i].typeWanted+'.png'" class="logo"></td>   
             <td><button (click)="trade('buy', i)">>>></button></td>
             <td *ngIf="shopSell[i]">{{ shopSell[i].quantityGiven }}</td>
-            <td *ngIf="shopSell[i]">{{ shopSell[i].typeGiven }}</td>     
+            <td *ngIf="shopSell[i]"><img [src]="'assets/img/logo/'+shopSell[i].typeGiven+'.png'" class="logo"></td>     
     
             <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityWanted }}</td>
-            <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeWanted }}</td>
+            <td *ngIf="shopBuy[i]"><img [src]="'assets/img/logo/'+shopBuy[i].typeWanted+'.png'" class="logo"></td>
             <td><button (click)="trade('sell', i)">>>></button></td>
             <td *ngIf="shopBuy[i]">{{ shopBuy[i].quantityGiven }}</td>
-            <td *ngIf="shopBuy[i]">{{ shopBuy[i].typeGiven }}</td>
+            <td *ngIf="shopBuy[i]"><img [src]="'assets/img/logo/'+shopBuy[i].typeGiven+'.png'" class="logo"></td>
         </tr>
     </table>
     <button (click)="next()">Poursuivre</button>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Boss } from 'src/app/models/boss.model';
 
 @Component({
   selector: 'app-boss',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class BossComponent {
 
+  boss!: Boss;
+
+  
 }

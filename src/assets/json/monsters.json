@@ -14,5 +14,13 @@
         "damage": 1,
         "loot": "another thing",
         "zoneNumber": 1
+    },
+    {
+        "img": "",
+        "name": "test",
+        "life": 5,
+        "damage": 1,
+        "loot": "another thing",
+        "zoneNumber": 2
     }
 ]

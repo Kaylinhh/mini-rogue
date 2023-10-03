@@ -2,12 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CampChoice } from 'src/app/models/camp-choice.model';
 import { Player } from 'src/app/models/player.model';
-import { QuantityType } from 'src/app/models/quantity-type.model';
 
 @Component({
   selector: 'app-camp',
   templateUrl: './camp.component.html',
-  styleUrls: ['./camp.component.scss']
+  styleUrls: ['./camp.component.scss', './../../../pages/game/game.component.scss']
 })
 export class CampComponent {
 

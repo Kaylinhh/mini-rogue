@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { QuantityType } from 'src/app/models/quantity-type.model';
+import { Utils } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-loot',
   templateUrl: './loot.component.html',
-  styleUrls: ['./loot.component.scss']
+  styleUrls: ['./loot.component.scss', './../../../pages/game/game.component.scss']
 })
 export class LootComponent {
 
@@ -18,7 +19,10 @@ export class LootComponent {
 
   currentLoot: QuantityType[] = [];
 
-  constructor(private httpClient: HttpClient){}
+  constructor(
+    private httpClient: HttpClient,
+    private utils: Utils
+    ){}
 
   ngOnInit(): void {
     this.httpClient.get("assets/json/loots.json").subscribe((data: any) => {

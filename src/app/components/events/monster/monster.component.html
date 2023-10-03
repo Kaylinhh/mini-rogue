@@ -8,4 +8,4 @@
 <button *ngIf="this.monster.life > 0 && this.player.life > 0" (click)="fight()">FIGHT</button>
 
 <div *ngIf="this.player.life <= 0">GAME OVER</div>
-<button *ngIf="this.monster.life <= 0">Poursuivre</button>
+<button *ngIf="this.monster.life <= 0" (click)="next()">Poursuivre</button>

@@ -51,6 +51,7 @@ export class EventService {
             player.status = "rest";
             player.currentFloor += 1;
         }
+
     }
 
     goToFloor (player: Player) {

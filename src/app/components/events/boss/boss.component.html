@@ -1,1 +1,11 @@
-<p>boss works!</p>
+<h1>omg un boss</h1>
+<div>
+    {{ boss.name }}
+    PV: {{ boss.life }}
+    ATK: {{ boss.damage }}
+</div>
+
+<button *ngIf="this.boss.life > 0 && this.player.life > 0" (click)="fight()">FIGHT</button>
+
+<div *ngIf="this.player.life <= 0">GAME OVER</div>
+<button *ngIf="this.boss.life <= 0" (click)="next()">Poursuivre</button>

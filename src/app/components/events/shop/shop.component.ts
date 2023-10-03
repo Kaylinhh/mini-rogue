@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { ShopOffer } from 'src/app/models/shop-offer.model';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-shop',
@@ -22,7 +23,10 @@ export class ShopComponent {
   shopSell: ShopOffer[] = [];
   shopBuy: ShopOffer[] = [];
   
-  constructor(private httpClient: HttpClient){}
+  constructor(
+    private httpClient: HttpClient,
+    private lss: LocalStorageService
+    ){}
   
   ngOnInit(){
     this.httpClient.get("assets/json/shop-trades.json").subscribe((data: any) =>{
@@ -35,7 +39,7 @@ export class ShopComponent {
       this.shopSell.push(data.sell[randomTradeSecond]);
       this.shopBuy.push(data.buy[0]);
       this.shopBuy.push(data.buy[1]);
-
+      this.lss.update("S" + randomTradeFirst + "," + randomTradeSecond);
     })
   }
 

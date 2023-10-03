@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { Trap } from 'src/app/models/trap.model';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-trap',
@@ -28,11 +29,18 @@ export class TrapComponent {
 
   canProceed: boolean = false;
 
-  constructor(private httpClient: HttpClient){}
+  randomTrapIndex: number = 0;
+
+  constructor(
+    private httpClient: HttpClient,
+    private lss: LocalStorageService
+    ){}
 
   ngOnInit(): void {
     this.httpClient.get("assets/json/traps.json").subscribe((data: any) => {
-      this.currentTrap = data[this.player.currentZone-1][Math.floor(Math.random()*data[this.player.currentZone-1].length)];   
+      this.randomTrapIndex = Math.floor(Math.random()*data[this.player.currentZone-1].length)
+      this.currentTrap = data[this.player.currentZone-1][this.randomTrapIndex];
+      this.lss.update("T" + this.randomTrapIndex);
     });
   }
 
@@ -49,6 +57,7 @@ export class TrapComponent {
     for(let i = 0; i < this.currentTrap.linesOfEffect.length; i++){
       if(this.currentTrap.linesOfEffect[i].blackDie.includes(this.blackDie)){
         this.currentLineEffect = i;
+        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
         break;
       }
     }
@@ -58,7 +67,10 @@ export class TrapComponent {
     this.whiteDice = dice;
     this.isWhiteDiceSucced = false;
     for(let i = 0; i < dice.length; i++){
-      if(dice[i] >= 5) this.isWhiteDiceSucced = true;
+      if(dice[i] >= 5){
+        this.isWhiteDiceSucced = true;
+        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
+      }
     }
   }
 

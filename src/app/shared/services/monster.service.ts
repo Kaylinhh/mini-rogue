@@ -45,11 +45,11 @@ export class MonsterService {
       );
     }
     
-    getBossByZone$(zone: number): Observable<Boss[]> {
-        this.boss
-          .subscribe(boss => {
-            this._bossesByZoneSubject$.next(boss.filter(boss => boss.zoneNumber === zone) as Boss[])
-          });
-        return this._bossesByZoneSubject$.asObservable();
-    }
+    // getBossByZone$(zone: number): Observable<Boss[]> {
+    //     this.boss
+    //       .subscribe(boss => {
+    //         this._bossesByZoneSubject$.next(boss.filter(boss => boss.zoneNumber === zone) as Boss[])
+    //       });
+    //     return this._bossesByZoneSubject$.asObservable();
+    // }
 }

@@ -1,6 +1,6 @@
 <div>
     <h1>Coffre aux trésors</h1>
-    <p>Vous trouvez...</p>
-    <p *ngFor="let loot of currentLoot">{{ loot.quantity }} {{ loot.type }}</p>
+    <p *ngIf="player">Vous trouvez...</p>
+    <p *ngFor="let loot of currentLoot">{{ loot.quantity }} <img [src]="'assets/img/logo/'+loot.type+'.png'" class="logo"></p>
     <button (click)="next()">Poursuivre</button>
 </div>

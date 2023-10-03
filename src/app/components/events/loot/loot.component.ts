@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { QuantityType } from 'src/app/models/quantity-type.model';
-import { UtilsService } from 'src/app/shared/services/utils.service';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 
 @Component({
   selector: 'app-loot',
@@ -21,13 +21,14 @@ export class LootComponent {
 
   constructor(
     private httpClient: HttpClient,
-    private utils: UtilsService
+    private lss: LocalStorageService
     ){}
 
   ngOnInit(): void {
     this.httpClient.get("assets/json/loots.json").subscribe((data: any) => {
       let randomLoot = Math.floor(Math.random()*data.length);
       this.currentLoot.push({"quantity":data[randomLoot].quantity*this.player.currentZone, "type":data[randomLoot].type});
+      this.lss.update("L" + randomLoot);
 
       for(let i = 0; i < this.currentLoot.length; i++){
         this.player[this.currentLoot[i].type] += this.currentLoot[i].quantity;

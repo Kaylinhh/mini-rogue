@@ -1,10 +1,11 @@
 <h1>oh no un monstre</h1>
 <div>
-    <div *ngFor="let monster of monsterList$ | async">
-        {{ monster.name }}
-        PV: {{ monster.life }}
-        ATK: {{ monster.damage }} 
-    </div>
+    {{ monster.name }}
+    PV: {{ monster.life }}
+    ATK: {{ monster.damage }}
 </div>
 
-<button>Poursuivre</button>
+<button *ngIf="this.monster.life > 0 && this.player.life > 0" (click)="fight()">FIGHT</button>
+
+<div *ngIf="this.player.life <= 0">GAME OVER</div>
+<button *ngIf="this.monster.life <= 0">Poursuivre</button>

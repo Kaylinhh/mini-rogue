@@ -21,8 +21,14 @@ export class LocalStorageService {
     }
 
     save(player: Player): void {
-        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.currentEncounter + ";" + player.currentFloor + ";" + player.currentZone + ";" + player.bossFloor + player.status;
-        // TODO : 15 infos (check new Player)
+        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.bonus + ";" + player.penalty + ";" + player.die + ";" + player.status + ";" + player.currentEncounter + ";" + player.maxEncounter + ";" + player.currentFloor + ";" + player.maxFloor + ";" + player.currentZone + ";" + player.bossFloor;
         localStorage.setItem('MiniRogueGameSave', value);
+    }
+
+    update(status: string): void {
+        let oldStatusList: string[] = this.get().match(/[a-zA-Z,]+/g) as string[];
+        let oldStatus: string = oldStatusList[0];
+        let newSave = localStorage.getItem('MiniRogueGameSave')?.replace(oldStatus, status);
+        localStorage.setItem('MiniRogueGameSave', newSave as string);
     }
 }

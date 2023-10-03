@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
 import { QuantityType } from 'src/app/models/quantity-type.model';
-import { Utils } from 'src/app/shared/services/utils.service';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-loot',
@@ -21,7 +21,7 @@ export class LootComponent {
 
   constructor(
     private httpClient: HttpClient,
-    private utils: Utils
+    private utils: UtilsService
     ){}
 
   ngOnInit(): void {

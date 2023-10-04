@@ -35,11 +35,20 @@ export class ShopComponent {
       while(randomTradeSecond === randomTradeFirst){
         randomTradeSecond = Math.floor(Math.random()*data.sell.length);
       }
+      // previous game saved
+      if(this.player.status.startsWith("[S")){
+        randomTradeFirst = parseInt((this.player.status.match(/\d+/g) as string[])[0]);
+        randomTradeSecond = parseInt((this.player.status.match(/\d+/g) as string[])[1]);
+      }
+      
       this.shopSell.push(data.sell[randomTradeFirst]);
       this.shopSell.push(data.sell[randomTradeSecond]);
       this.shopBuy.push(data.buy[0]);
       this.shopBuy.push(data.buy[1]);
-      this.lss.update("[S" + randomTradeFirst + "," + randomTradeSecond + "]");
+
+      let newStatus = "[S" + randomTradeFirst + "," + randomTradeSecond + "]"
+      this.lss.update(newStatus);
+      this.player.status = newStatus;
     })
   }
 
@@ -57,8 +66,22 @@ export class ShopComponent {
     } else {
       return;
     }
+
+    /*if (currentTrade.typeGiven === "gold") {
+      this.player.gold += currentTrade.quantityGiven;
+      console.log(this.player.gold)
+    } else if (currentTrade.typeGiven === "life") {
+      this.player.life += currentTrade.quantityGiven;
+      console.log(this.player.life)
+    } else if (currentTrade.typeGiven === "armor") {
+      this.player.armor += currentTrade.quantityGiven;
+      console.log(this.player.armor)
+    } else if (currentTrade.typeGiven === "food") {
+      console.log(typeof(this.player.food))
+      this.player.food = this.player.food+currentTrade.quantityGiven;
+      console.log(this.player.food)
+    }*/
     this.player[currentTrade.typeGiven] += currentTrade.quantityGiven;
-    this.updatedPlayer.emit(this.player);
   }
 
   next(): void {

@@ -27,8 +27,8 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
+      this.generateDoors();
     });
-    this.generateDoors();
   }
 
   generateDoors(): void {
@@ -38,8 +38,16 @@ export class MapComponent implements OnInit {
     while (this.encounter2 === this.encounter1) {
       this.encounter2 = this.eventService.generateEncounter();
     }
+    // previous game saved
+    if (this.player.status != "[door]") {
+      this.encounter1 = (this.player.status.match(/\w+/g) as string[])[0];
+      this.encounter2 = (this.player.status.match(/\w+/g) as string[])[1];
+    }
+
     this.encounterList = [this.encounter1, this.encounter2];
-    this.lss.update("[" + this.encounter1 + "," + this.encounter2 + "]");
+    let newStatus = "[" + this.encounter1 + "," + this.encounter2 + "]";
+    this.lss.update(newStatus);
+    this.player.status = newStatus;
   }
 
   goToEncounter(encounter: string): void {

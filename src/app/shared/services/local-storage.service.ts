@@ -21,7 +21,7 @@ export class LocalStorageService {
     }
 
     save(player: Player): void {
-        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.bonus + ";" + player.penalty + ";" + player.die + ";[" + player.status + "];" + player.currentEncounter + ";" + player.maxEncounter + ";" + player.currentFloor + ";" + player.maxFloor + ";" + player.currentZone + ";" + player.bossFloor;
+        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.bonus + ";" + player.penalty + ";" + player.die + ";" + player.status + ";" + player.currentEncounter + ";" + player.maxEncounter + ";" + player.currentFloor + ";" + player.maxFloor + ";" + player.currentZone + ";" + player.bossFloor;
         localStorage.setItem('MiniRogueGameSave', value);
     }
 
@@ -30,5 +30,10 @@ export class LocalStorageService {
         let oldStatus: string = oldStatusList[0];
         let newSave = localStorage.getItem('MiniRogueGameSave')?.replace(oldStatus, status);
         localStorage.setItem('MiniRogueGameSave', newSave as string);
+    }
+
+    getPlayerFromSave(): Player {
+        let localStorageList: any[] = localStorage.getItem('MiniRogueGameSave')?.split(";") as any[];
+        return new Player(parseInt(localStorageList[0]),parseInt(localStorageList[1]),parseInt(localStorageList[2]),parseInt(localStorageList[3]),parseInt(localStorageList[4]),localStorageList[5],localStorageList[6],parseInt(localStorageList[7]),localStorageList[8],parseInt(localStorageList[9]),parseInt(localStorageList[10]),parseInt(localStorageList[11]),parseInt(localStorageList[12]),parseInt(localStorageList[13]),localStorageList[14]);
     }
 }

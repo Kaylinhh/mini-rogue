@@ -8,14 +8,17 @@ import { LocalStorageService } from './local-storage.service';
 })
 export class PlayerService {
 
-  private readonly _player$: BehaviorSubject<Player> = new BehaviorSubject<Player>(new Player(10,0,10,5,0,[],[],1,"encounter",1,4,1,7,1,[1,4,7]));
+  private _basePlayer: Player = new Player(10,0,10,5,0,[],[],1,"[door]",1,4,1,7,1,[1,4,7]);
 
-  constructor(private lss: LocalStorageService) { }
+  private readonly _player$: BehaviorSubject<Player> = new BehaviorSubject<Player>(this._basePlayer);
+
+  constructor(private lss: LocalStorageService) { this.ngOnInit() }
 
   ngOnInit(): void {
     if(this.lss.exist() && this.lss.get() != ""){
-      let gameInfo: any[] = this.lss.get().split(";");
-      this._setPlayer$(new Player(gameInfo[0],gameInfo[1],gameInfo[2],gameInfo[3],gameInfo[4],gameInfo[5],gameInfo[6],gameInfo[7],gameInfo[8],gameInfo[9],gameInfo[10],gameInfo[11],gameInfo[12],gameInfo[13],gameInfo[14]));
+      this._setPlayer$(this.lss.getPlayerFromSave());
+    }else{
+      this.lss.save(this._basePlayer);
     }
   }
 

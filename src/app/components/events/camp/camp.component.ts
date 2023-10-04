@@ -40,12 +40,14 @@ export class CampComponent {
         randoms += randomCamp;
         if(i < 2) randoms += ",";
       }
-      this.lss.update("[C" + randoms + "]");
+      let newStatus = "[C" + randoms + "]";
+      this.lss.update(newStatus);
+      this.player.status = newStatus;
     });
   }
 
   choosed(quantity: number, type: "life" | "experience" | "gold" | "food" | "armor"): void {
-    this.player[type] += quantity;
+    this.player[type] += quantity as number;
     this.isChoiceMade = true;
   }
 

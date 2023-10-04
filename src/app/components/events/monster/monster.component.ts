@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Monster } from 'src/app/models/monster.model';
 import { Player } from 'src/app/models/player.model';
-import { EventService } from 'src/app/shared/services/events.service';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { MonsterService } from 'src/app/shared/services/monster.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 
@@ -22,13 +21,16 @@ export class MonsterComponent implements OnInit {
   constructor(
     private monsterService: MonsterService,
     private playerService: PlayerService,
-    private eventService: EventService
+    private lss: LocalStorageService
   ) { }
 
   ngOnInit(): void {
     this.monsterService.getMonsterByZone$(this.player.currentZone).subscribe(data => {
       this.monsterList = data;
       [this.monster] = this.monsterList;
+      let newStatus = "[M]";
+      this.lss.update(newStatus);
+      this.player.status = newStatus;
     })
   };
 

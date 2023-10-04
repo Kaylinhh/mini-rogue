@@ -31,13 +31,14 @@ export class EventService {
         }
     }
 
-    goToEncounter(player: Player): void { //to be improved
+    goToEncounter(player: Player): Player { //to be improved
         if (player.currentEncounter < player.maxEncounter) {
-
-            if (player.status === "encounter") {
-                player.status = "door";
+            console.log(player.status)
+            if (player.status.match(/^\[[A-Z]+/) || player.status === "[encounter]") {
+                console.log("indoor")
+                player.status = "[door]";
             } else {
-                player.status = "encounter";
+                player.status = "[encounter]";
                 player.currentEncounter += 1;
             }
 
@@ -51,12 +52,12 @@ export class EventService {
             player.status = "rest";
             player.currentFloor += 1;
         }
-
+        return player;
     }
 
     goToFloor (player: Player) {
         if (player.food >= this.foodNeeded) {
-            player.status = "encounter";
+            player.status = "[]";
             player.food -= this.foodNeeded;
             player.currentEncounter = 1;
         } else {

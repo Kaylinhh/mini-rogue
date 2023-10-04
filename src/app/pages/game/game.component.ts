@@ -40,6 +40,7 @@ export class GameComponent {
     this.player = this.eventService.goToEncounter(this.player);
     if(this.player.status === "[door]") this.event = "door";
     else this.event = this.eventService.generateEncounter();
+    this.playerService._setPlayer$(this.player);
   }
 
   currentEncounter(event: string): void {

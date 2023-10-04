@@ -40,6 +40,7 @@ export class MonsterComponent implements OnInit {
   }
 
   next(): void {
+    this.playerService._setPlayer$(this.player);
     this.nextEvent.emit();
   }
 }

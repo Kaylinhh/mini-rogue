@@ -32,12 +32,16 @@ export class EventService {
     }
 
     goToEncounter(player: Player): Player { //to be improved
+
         if (player.currentEncounter < player.maxEncounter) {
-            console.log(player.status)
+            console.log(player.status, player.currentEncounter, player.maxEncounter)
+
             if (player.status.match(/^\[[A-Z]+/) || player.status === "[encounter]") {
                 console.log("indoor")
                 player.status = "[door]";
             } else {
+                console.log(player.status, "ififelse")
+
                 player.status = "[encounter]";
                 player.currentEncounter += 1;
             }
@@ -46,18 +50,29 @@ export class EventService {
             player.currentFloor === player.bossFloor[0] ||
             player.currentFloor === player.bossFloor[1] ||
             player.currentFloor === player.bossFloor[2]
-            ) {
-            player.status = "boss";
+        ) {
+            console.log(player.status, "elseif")
+
+            player.status = "[boss]";
+            console.log(player.status, "elseif2")
+
         } else {
-            player.status = "rest";
+            
+            player.status = "[rest]";
+            console.log(player.status, "elseifelse")
             player.currentFloor += 1;
+            console.log( player.status, "elseifelse2")
+
         }
         return player;
     }
 
-    goToFloor (player: Player) {
+
+
+
+    goToFloor(player: Player): void {
         if (player.food >= this.foodNeeded) {
-            player.status = "[]";
+            player.status = "[door]";
             player.food -= this.foodNeeded;
             player.currentEncounter = 1;
         } else {

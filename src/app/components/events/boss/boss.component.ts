@@ -41,9 +41,9 @@ export class BossComponent {
   }
   
   next(): void {
-    this.nextEvent.emit();
-    this.player.status = "rest";
+    this.player.status = "[rest]";
     this.playerService._setPlayer$(this.player);
+    this.nextEvent.emit();
   }
   
 }

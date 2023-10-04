@@ -28,7 +28,7 @@ export class LootComponent {
     this.httpClient.get("assets/json/loots.json").subscribe((data: any) => {
       let randomLoot = Math.floor(Math.random()*data.length);
       this.currentLoot.push({"quantity":data[randomLoot].quantity*this.player.currentZone, "type":data[randomLoot].type});
-      this.lss.update("L" + randomLoot);
+      this.lss.update("[L" + randomLoot + "]");
 
       for(let i = 0; i < this.currentLoot.length; i++){
         this.player[this.currentLoot[i].type] += this.currentLoot[i].quantity;

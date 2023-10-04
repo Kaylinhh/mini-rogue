@@ -39,7 +39,7 @@ export class MapComponent implements OnInit {
       this.encounter2 = this.eventService.generateEncounter();
     }
     this.encounterList = [this.encounter1, this.encounter2];
-    this.lss.update(this.encounter1 + "," + this.encounter2);
+    this.lss.update("[" + this.encounter1 + "," + this.encounter2 + "]");
   }
 
   goToEncounter(encounter: string): void {

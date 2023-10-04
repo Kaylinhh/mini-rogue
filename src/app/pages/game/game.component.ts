@@ -23,6 +23,7 @@ export class GameComponent {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
+      if(!this.lss.exist()) this.lss.save(player);
     });
     this.event = this.eventService.generateEncounter();
   }

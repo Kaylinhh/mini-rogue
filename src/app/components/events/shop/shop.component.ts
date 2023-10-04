@@ -39,7 +39,7 @@ export class ShopComponent {
       this.shopSell.push(data.sell[randomTradeSecond]);
       this.shopBuy.push(data.buy[0]);
       this.shopBuy.push(data.buy[1]);
-      this.lss.update("S" + randomTradeFirst + "," + randomTradeSecond);
+      this.lss.update("[S" + randomTradeFirst + "," + randomTradeSecond + "]");
     })
   }
 

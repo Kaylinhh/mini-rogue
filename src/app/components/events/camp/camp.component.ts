@@ -40,7 +40,7 @@ export class CampComponent {
         randoms += randomCamp;
         if(i < 2) randoms += ",";
       }
-      this.lss.update("C" + randoms);
+      this.lss.update("[C" + randoms + "]");
     });
   }
 

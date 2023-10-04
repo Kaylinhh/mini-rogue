@@ -40,7 +40,7 @@ export class TrapComponent {
     this.httpClient.get("assets/json/traps.json").subscribe((data: any) => {
       this.randomTrapIndex = Math.floor(Math.random()*data[this.player.currentZone-1].length)
       this.currentTrap = data[this.player.currentZone-1][this.randomTrapIndex];
-      this.lss.update("T" + this.randomTrapIndex);
+      this.lss.update("[T" + this.randomTrapIndex + "]");
     });
   }
 
@@ -57,7 +57,7 @@ export class TrapComponent {
     for(let i = 0; i < this.currentTrap.linesOfEffect.length; i++){
       if(this.currentTrap.linesOfEffect[i].blackDie.includes(this.blackDie)){
         this.currentLineEffect = i;
-        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
+        this.lss.update("[T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice + "]");
         break;
       }
     }
@@ -69,9 +69,9 @@ export class TrapComponent {
     for(let i = 0; i < dice.length; i++){
       if(dice[i] >= 5){
         this.isWhiteDiceSucced = true;
-        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
       }
     }
+    this.lss.update("[T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice + "]");
   }
 
 }

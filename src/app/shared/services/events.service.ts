@@ -33,9 +33,7 @@ export class EventService {
 
     goToEncounter(player: Player): Player { //to be improved
         if (player.currentEncounter < player.maxEncounter) {
-            console.log(player.status)
             if (player.status.match(/^\[[A-Z]+/) || player.status === "[encounter]") {
-                console.log("indoor")
                 player.status = "[door]";
             } else {
                 player.status = "[encounter]";

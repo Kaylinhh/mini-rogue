@@ -38,9 +38,26 @@ export class TrapComponent {
 
   ngOnInit(): void {
     this.httpClient.get("assets/json/traps.json").subscribe((data: any) => {
-      this.randomTrapIndex = Math.floor(Math.random()*data[this.player.currentZone-1].length)
+      this.randomTrapIndex = Math.floor(Math.random()*data[this.player.currentZone-1].length);
+      // previous game saved
+      if(this.player.status.startsWith("[T")){
+        this.randomTrapIndex = parseInt((this.player.status.match(/\d+/g) as string[])[0]);
+        if((this.player.status.match(/\d+/g) as string[]).length > 1){
+          this.blackDie = parseInt((this.player.status.match(/\d+/g) as string[])[1]);
+          this.whiteDice = [];
+          for(let i = 2; i < (this.player.status.match(/\d+/g) as string[]).length; i++){
+            this.whiteDice.push(parseInt((this.player.status.match(/\d+/g) as string[])[i]));
+          }
+        }
+      }
+
       this.currentTrap = data[this.player.currentZone-1][this.randomTrapIndex];
-      this.lss.update("T" + this.randomTrapIndex);
+
+      let blackAndWhite: string = "";
+      if(this.blackDie && this.whiteDice.length > 0) blackAndWhite += this.blackDie + "," + this.whiteDice;
+      let newStatus: string = "[T" + this.randomTrapIndex + "," + blackAndWhite + "]";
+      this.lss.update(newStatus);
+      this.player.status = newStatus;
     });
   }
 
@@ -57,7 +74,9 @@ export class TrapComponent {
     for(let i = 0; i < this.currentTrap.linesOfEffect.length; i++){
       if(this.currentTrap.linesOfEffect[i].blackDie.includes(this.blackDie)){
         this.currentLineEffect = i;
-        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
+        let newStatus = "[T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice + "]";
+        this.lss.update(newStatus);
+        this.player.status = newStatus;
         break;
       }
     }
@@ -69,9 +88,11 @@ export class TrapComponent {
     for(let i = 0; i < dice.length; i++){
       if(dice[i] >= 5){
         this.isWhiteDiceSucced = true;
-        this.lss.update("T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice);
       }
     }
+    let newStatus = "[T" + this.randomTrapIndex + "," + this.blackDie + "," + this.whiteDice + "]";
+    this.lss.update(newStatus);
+    this.player.status = newStatus;
   }
 
 }

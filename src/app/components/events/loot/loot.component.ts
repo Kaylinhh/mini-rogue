@@ -27,8 +27,15 @@ export class LootComponent {
   ngOnInit(): void {
     this.httpClient.get("assets/json/loots.json").subscribe((data: any) => {
       let randomLoot = Math.floor(Math.random()*data.length);
+      // previous game saved
+      if(this.player.status.startsWith("[L")){
+        randomLoot = parseInt((this.player.status.match(/\d+/) as string[])[0]);
+      }
+
       this.currentLoot.push({"quantity":data[randomLoot].quantity*this.player.currentZone, "type":data[randomLoot].type});
-      this.lss.update("L" + randomLoot);
+      let newStatus = "[L" + randomLoot + "]";
+      this.lss.update(newStatus);
+      this.player.status = newStatus;
 
       for(let i = 0; i < this.currentLoot.length; i++){
         this.player[this.currentLoot[i].type] += this.currentLoot[i].quantity;

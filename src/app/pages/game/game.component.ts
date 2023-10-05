@@ -24,6 +24,7 @@ export class GameComponent {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
       this.event = this.eventService.generateEncounter();
+      console.log(this.player.status, "ng");
       if (this.player.status.match(/^\[[a-z]/)) this.event = "door";
       else if (this.player.status.match(/^\[B/)) this.event = "boss";
       else if (this.player.status.match(/^\[C/)) this.event = "camp";
@@ -37,10 +38,12 @@ export class GameComponent {
 
   next(): void {
     this.lss.save(this.player);
+    
     this.player = this.eventService.goToEncounter(this.player);
+    this.playerService._setPlayer$(this.player);
+    console.log(this.player.status);
     if(this.player.status === "[door]") this.event = "door";
     else this.event = this.eventService.generateEncounter();
-    this.playerService._setPlayer$(this.player);
   }
 
   currentEncounter(event: string): void {

@@ -14,30 +14,41 @@
     sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.
 </p>
 
-<button *ngIf="isGameSave()" [routerLink]="['/game']">Continue</button>
-<br>
-<button *ngIf="isGameSave()" (click)="clearGameSave()">Effacer la partie</button>
+<div *ngIf="isGameSave()">
+    <button [routerLink]="['/game']">Continue</button>
+    <br>
+    <button (click)="clearGameSave()">Effacer la partie</button>
+</div>
 
 <button *ngIf="!isGameSave() && !chooseDifficulty" (click)="chooseDifficulty = true">New game</button>
-<button *ngIf="chooseDifficulty" (click)="setDifficulty('normal')" [ngClass]="difficultyChoosed === 'normal' ? 'difficulty-selected' : ''">Normal</button>
-<button *ngIf="chooseDifficulty" (click)="setDifficulty('hard')" [ngClass]="difficultyChoosed === 'hard' ? 'difficulty-selected' : ''">Hard</button>
-<button *ngIf="chooseDifficulty" (click)="setDifficulty('custom')" [ngClass]="difficultyChoosed === 'custom' ? 'difficulty-selected' : ''">Custom</button>
-<br>
-<form *ngIf="startingStats">
-    <ul>
-        <li>Life: <input type="number" [(ngModel)]="startingStats.life" name="life" id="life" min="1"></li>
-        <li>Experience: <input type="number" [(ngModel)]="startingStats.experience" name="experience" id="experience" min="0"></li>
-        <li>Gold: <input type="number" [(ngModel)]="startingStats.gold" name="gold" id="gold" min="0"></li>
-        <li>Food: <input type="number" [(ngModel)]="startingStats.food" name="food" id="food" min="0"></li>
-        <li>Armor: <input type="number" [(ngModel)]="startingStats.armor" name="armor" id="armor" min="0"></li>
-        <li>Max Encounter: <input type="number" [(ngModel)]="startingStats.maxEncounter" name="maxEncounter" id="maxEncounter" min="1"></li>
-        <li>Max Floor: <input type="number" [(ngModel)]="startingStats.maxFloor" name="maxFloor" id="maxFloor" min="3"></li>
-        <li>Zone: 3</li>
-        <li>Boss Floor: <input type="number" [(ngModel)]="startingStats.bossFloor[0]" name="bossFloor0" id="bossFloor0" min="1"><input type="number" [(ngModel)]="startingStats.bossFloor[1]" name="bossFloor1" id="bossFloor1" min="2"></li>
-        <li>Le dernier boss étant au dernier étage: {{ startingStats.maxFloor }}</li>
-    </ul>
+
+<div *ngIf="chooseDifficulty">
+    <h2>Difficulty</h2>
+    <button (click)="setDifficulty('normal')" [ngClass]="difficultyChoosed === 'normal' ? 'difficulty-selected' : ''">Normal</button>
+    <button (click)="setDifficulty('hard')" [ngClass]="difficultyChoosed === 'hard' ? 'difficulty-selected' : ''">Hard</button>
+    <button (click)="setDifficulty('custom')" [ngClass]="difficultyChoosed === 'custom' ? 'difficulty-selected' : ''">Custom</button>
     <br>
-    <button *ngIf="chooseDifficulty" (click)="launch()" [routerLink]="['/game']" [disabled]="!difficultyChoosed">Lauch</button>
-</form>
+    <form *ngIf="startingStats">
+        <ul>
+            <li>Life: <input type="number" [(ngModel)]="startingStats.life" name="life" id="life" min="1"></li>
+            <li>Experience: <input type="number" [(ngModel)]="startingStats.experience" name="experience" id="experience" min="0"></li>
+            <li>Gold: <input type="number" [(ngModel)]="startingStats.gold" name="gold" id="gold" min="0"></li>
+            <li>Food: <input type="number" [(ngModel)]="startingStats.food" name="food" id="food" min="0"></li>
+            <li>Armor: <input type="number" [(ngModel)]="startingStats.armor" name="armor" id="armor" min="0"></li>
+            <li>Max Encounter: <input type="number" [(ngModel)]="startingStats.maxEncounter" name="maxEncounter" id="maxEncounter" min="1"></li>
+            <li>Max Floor: <input type="number" [(ngModel)]="startingStats.maxFloor" name="maxFloor" id="maxFloor" min="3"></li>
+            <li>Zone: 3</li>
+            <li>Boss Floor: <input type="number" [(ngModel)]="startingStats.bossFloor[0]" name="bossFloor0" id="bossFloor0" min="1"><input type="number" [(ngModel)]="startingStats.bossFloor[1]" name="bossFloor1" id="bossFloor1" min="2"></li>
+            <li>Le dernier boss étant au dernier étage: {{ startingStats.maxFloor }}</li>
+        </ul>
+    </form>
+    <br>
+    <div *ngIf="startingStats">
+        <h2>Character class</h2>
+        <button *ngFor="let className of ['protector', 'bloodmage', 'archer']" (click)="setCharacterClass(className)" [ngClass]="startingStats.characterClass === className ? 'class-selected' : ''">{{ className }}</button>
+    </div>
+    <br>
+    <button (click)="launch()" [routerLink]="['/game']" [disabled]="!difficultyChoosed">Launch</button>
+</div>
 
 <app-footer></app-footer>

@@ -1,3 +1,4 @@
+import { EventService } from 'src/app/shared/services/events.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
@@ -30,6 +31,7 @@ export class TrapComponent {
   canProceed: boolean = false;
 
   randomTrapIndex: number = 0;
+
 
   constructor(
     private httpClient: HttpClient,

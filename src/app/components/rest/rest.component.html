@@ -1,11 +1,11 @@
 <p>Have a break (have a kitkat) </p>
 
-<button *ngIf="this.player.food >= this.foodNeeded" (click)="goToNextFloor()">Eat and go to the next floor</button>
+<button *ngIf="this.player.food >= this.foodNeeded" (click)="next()">Eat and go to the next floor</button>
 
 <div *ngIf="this.player.food < this.foodNeeded">
     <p>Oh no, you don't have enough food 😔 You lose 5hp</p>
     <div *ngIf="this.player.life <= 0">
         <p>GAME OVER</p>
     </div>
-    <button (click)="goToNextFloor()">Go to next floor</button>
+    <button (click)="next()">Go to next floor</button>
 </div>

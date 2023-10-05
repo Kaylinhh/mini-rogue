@@ -25,6 +25,6 @@
     (nextEvent)="next()"
     ></app-trap>
 
-<app-map *ngIf="event === 'door'" (chosenEncounter)="currentEncounter($event)"></app-map>
-<app-boss *ngIf="player.status === 'boss'" [player]="player" (nextEvent)="next()"></app-boss>
-<app-rest *ngIf="player.status === 'rest'"></app-rest>
+<app-map *ngIf="event === 'door'" (nextEvent)="next($event)"></app-map>
+<app-boss *ngIf="event === 'boss'" [player]="player" (nextEvent)="next()"></app-boss>
+<app-rest *ngIf="event === 'rest'" [player]="player" (nextEvent)="next()"></app-rest>

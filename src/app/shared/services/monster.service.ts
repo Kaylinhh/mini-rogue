@@ -20,7 +20,6 @@ export class MonsterService {
       map((monsters: Monster[]) => monsters.filter(monster => monster.zoneNumber === zone)),
       map((filteredMonsters: Monster[]) => {
         const randomIndex = Math.floor(Math.random() * filteredMonsters.length);
-        console.log(randomIndex, filteredMonsters);
         return [filteredMonsters[randomIndex]];
       })
     );
@@ -31,7 +30,6 @@ export class MonsterService {
       map((bosses: Boss[]) => bosses.filter(boss => boss.zoneNumber === zone)),
       map((filteredBosses: Boss[]) => {
         const randomIndex = Math.floor(Math.random() * filteredBosses.length);
-        console.log(randomIndex, filteredBosses);
         return [filteredBosses[randomIndex]];
       })
     );

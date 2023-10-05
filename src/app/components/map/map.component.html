@@ -1,24 +1,24 @@
-<div *ngFor="let encounter of encounterList">
+<div *ngFor="let door of doorList">
 
-    <div *ngIf="encounter === 'camp'">
+    <div *ngIf="door === 'camp'">
         <img class="card-img" src="assets/img/map-icons/camp.png">
     </div>
 
-    <div *ngIf="encounter === 'loot'">
+    <div *ngIf="door === 'loot'">
         <img class="card-img" src="assets/img/map-icons/loot.png">
     </div>
 
-    <div *ngIf="encounter === 'monster'">
+    <div *ngIf="door === 'monster'">
         <img class="card-img" src="assets/img/map-icons/monster.png">
     </div>
 
-    <div *ngIf="encounter === 'shop'">
+    <div *ngIf="door === 'shop'">
         <img class="card-img" src="assets/img/map-icons/shop.png">
     </div>
 
-    <div *ngIf="encounter === 'trap'">
+    <div *ngIf="door === 'trap'">
         <img class="card-img" src="assets/img/map-icons/trap.png">
     </div>
 
-    <button (click)="goToEncounter(encounter)">Select</button>
+    <button (click)="next(door)">Select</button>
 </div>

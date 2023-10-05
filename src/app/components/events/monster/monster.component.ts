@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Monster } from 'src/app/models/monster.model';
 import { Player } from 'src/app/models/player.model';
+import { EventService } from 'src/app/shared/services/events.service';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { MonsterService } from 'src/app/shared/services/monster.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
@@ -40,7 +41,6 @@ export class MonsterComponent implements OnInit {
   }
 
   next(): void {
-    this.playerService._setPlayer$(this.player);
     this.nextEvent.emit();
   }
 }

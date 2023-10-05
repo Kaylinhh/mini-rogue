@@ -11,12 +11,12 @@ import { PlayerService } from 'src/app/shared/services/player.service';
 })
 export class MapComponent implements OnInit {
 
-  @Output() chosenEncounter: EventEmitter<string> = new EventEmitter();
+  @Output() nextEvent: EventEmitter<string> = new EventEmitter();
 
   player!: Player;
-  encounter1: string = "";
-  encounter2: string = "";
-  encounterList: string[] = [];
+  event: string = "door";
+  chosenDoor: string = "";
+  doorList: string[] = [];
 
   constructor(
     private playerService: PlayerService,
@@ -27,32 +27,32 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
-      this.generateDoors();
     });
+    this.doorList = this.eventService.randomDoors();
   }
 
-  generateDoors(): void {
-    this.encounter1 = this.eventService.generateEncounter();
-    this.encounter2 = this.encounter1;
-
-    while (this.encounter2 === this.encounter1) {
-      this.encounter2 = this.eventService.generateEncounter();
-    }
-    // previous game saved
-    if (this.player.status != "[door]") {
-      this.encounter1 = (this.player.status.match(/\w+/g) as string[])[0];
-      this.encounter2 = (this.player.status.match(/\w+/g) as string[])[1];
-    }
-
-    this.encounterList = [this.encounter1, this.encounter2];
-    let newStatus = "[" + this.encounter1 + "," + this.encounter2 + "]";
-    this.lss.update(newStatus);
-    this.player.status = newStatus;
+  next(chosenDoor: string){
+    this.nextEvent.emit(chosenDoor);
+        
   }
 
-  goToEncounter(encounter: string): void {
-    this.eventService.goToEncounter(this.player);
-    this.playerService._setPlayer$(this.player);
-    this.chosenEncounter.emit(encounter);
-  }
+  // generateDoors(): void {
+  //   this.encounter1 = this.eventService.generateEncounter();
+  //   this.encounter2 = this.encounter1;
+
+  //   while (this.encounter2 === this.encounter1) {
+  //     this.encounter2 = this.eventService.generateEncounter();
+  //   }
+  //   // previous game saved
+  //   if (this.player.status != "[door]") {
+  //     this.encounter1 = (this.player.status.match(/\w+/g) as string[])[0];
+  //     this.encounter2 = (this.player.status.match(/\w+/g) as string[])[1];
+  //   }
+
+  //   this.encounterList = [this.encounter1, this.encounter2];
+  //   let newStatus = "[" + this.encounter1 + "," + this.encounter2 + "]";
+  //   this.lss.update(newStatus);
+  //   this.player.status = newStatus;
+  // }
+
 }

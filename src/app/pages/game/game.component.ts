@@ -23,35 +23,27 @@ export class GameComponent {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
-      this.event = this.eventService.generateEncounter();
-      console.log(this.player.status, "ng");
-      if (this.player.status.match(/^\[[a-z]/)) this.event = "door";
-      else if (this.player.status.match(/^\[B/)) this.event = "boss";
-      else if (this.player.status.match(/^\[C/)) this.event = "camp";
-      else if (this.player.status.match(/^\[L/)) this.event = "loot";
-      else if (this.player.status.match(/^\[M/)) this.event = "monster";
-      else if (this.player.status.match(/^\[S/)) this.event = "shop";
-      else if (this.player.status.match(/^\[T/)) this.event = "trap";
-      else this.event = "door";
+      // if (this.player.status.match(/^\[[a-z]/)) this.event = "door";
+      // else if (this.player.status.match(/^\[B/)) this.event = "boss";
+      // else if (this.player.status.match(/^\[C/)) this.event = "camp";
+      // else if (this.player.status.match(/^\[L/)) this.event = "loot";
+      // else if (this.player.status.match(/^\[M/)) this.event = "monster";
+      // else if (this.player.status.match(/^\[S/)) this.event = "shop";
+      // else if (this.player.status.match(/^\[T/)) this.event = "trap";
+      // else this.event = "door";
     });
+    this.eventService.getEvent$().subscribe((event: string) => {
+      this.event = event;      
+    })
   }
 
-  next(): void {
+  next(chosenDoor?: string): void {
     this.lss.save(this.player);
-    
-    this.player = this.eventService.goToEncounter(this.player);
-    this.playerService._setPlayer$(this.player);
-    console.log(this.player.status);
-    if(this.player.status === "[door]") this.event = "door";
-    else this.event = this.eventService.generateEncounter();
-  }
-
-  currentEncounter(event: string): void {
-    this.event = event;
+    this.eventService.next(this.event, chosenDoor);
   }
 
   randomEvent(): void { //to be deleted
-    this.event = this.eventService.generateEncounter();
+    this.event = this.eventService.randomEvent();
   }
 
   /*isEncounterA(kindOfEncounter: string): boolean {

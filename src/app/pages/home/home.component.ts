@@ -34,6 +34,10 @@ export class HomeComponent {
     this.startingStats = this.playerService.getStartingStats(value);
   }
 
+  setCharacterClass(value: string): void {
+    this.startingStats.characterClass = value;
+  }
+
   launch(): void {
     this.startingStats.bossFloor[2] = this.startingStats.maxFloor;
     if (this.startingStats.bossFloor[0] >= this.startingStats.bossFloor[1]) this.startingStats.bossFloor[1] = this.startingStats.bossFloor[0] + 1;

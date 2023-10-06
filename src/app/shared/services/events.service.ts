@@ -37,7 +37,6 @@ export class EventService implements OnInit {
     }
 
     next(event: string, chosenDoor?: string) {
-        console.log(this.event, "service1");
 
         switch (true) {
             case event === "boss":
@@ -58,8 +57,7 @@ export class EventService implements OnInit {
                 this.randomDoors();
                 break;
         }
-        console.log(this.event, "service2");
-
+        
         this.setEvent$(this.event);
         return { player: this.player, event: this.event };
     }
@@ -84,7 +82,7 @@ export class EventService implements OnInit {
 
     }
 
-    randomDoors() {
+    randomDoors(): string[] {
         const door1 = this.randomEvent();
         let door2 = this.randomEvent();
 
@@ -95,13 +93,15 @@ export class EventService implements OnInit {
         return [door1, door2];
     }
 
-
-    goToRest() {
+    goToRest(): Player {
         this.event = "rest";
         this.player.food -= this.foodNeeded;
-        if (this.player.food < 0) this.player.life -= 5;
+        if (this.player.food < 0) this.playerService.setLife(-5);
+        this.playerService.setLife(5);
         this.player.currentEncounter = 0;
         this.player.currentFloor += 1;
+
+        return this.player;
     }
 
 

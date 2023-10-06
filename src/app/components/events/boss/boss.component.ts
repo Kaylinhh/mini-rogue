@@ -19,12 +19,12 @@ export class BossComponent implements OnInit {
   bossList!: Boss[];
   playerDieRoll: number = 0;
   bossDieRoll: number = 0;
-  event: string = "boss";
+  playerD6: number = 0;
+  isFighting: boolean = false;
 
   constructor(
     private monsterService: MonsterService,
-    private playerService: PlayerService,
-    private eventService: EventService
+    private playerService: PlayerService
   ) { }
 
   ngOnInit(): void {
@@ -35,13 +35,13 @@ export class BossComponent implements OnInit {
   };
 
   fight(): void {
-    this.monsterService.fight(this.player, this.boss);
-    this.playerService._setPlayer$(this.player);
+    this.playerD6 = this.monsterService.fight(this.player, this.boss);
+    this.isFighting = true;
+    if (this.boss.life <= 0) this.isFighting = false;
   }
   
   next(): void {
     this.nextEvent.emit();
-    
   }
   
 }

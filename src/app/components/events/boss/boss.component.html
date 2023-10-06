@@ -1,5 +1,5 @@
+<h1>OMG un boss</h1>
 <div *ngIf="boss">
-    <h1>omg un boss</h1>
     <div>
         {{ boss.name }}
         PV: {{ boss.life }}
@@ -8,5 +8,15 @@
 
     <button *ngIf="boss.life > 0 && player.life > 0" (click)="fight()">FIGHT</button>
 
+    <div  *ngIf="isFighting">
+        <p *ngIf="playerD6 < 2">
+            Miss!
+        </p>
+        <p *ngIf="playerD6 >= 2">
+            Hit!
+        </p>
+    </div>
+    <p *ngIf="boss.life <= 0">You won!</p>
+   
     <button *ngIf="boss.life <= 0" (click)="next()">Poursuivre</button>
 </div>

@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { MapComponent } from './components/map/map.component';
 import { DieRollComponent } from './components/die-roll/die-roll.component';
 import { RestComponent } from './components/rest/rest.component';
+import { GameOverComponent } from './components/game-over/game-over.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RestComponent } from './components/rest/rest.component';
     FooterComponent,
     MapComponent,
     DieRollComponent,
-    RestComponent
+    RestComponent,
+    GameOverComponent
   ],
   imports: [
     BrowserModule,

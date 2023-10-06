@@ -35,20 +35,24 @@ export class MonsterService {
     );
   }
 
-  fight(player: Player, enemy: Monster | Boss) {
+  fight(player: Player, enemy: Monster | Boss): number {
     let playerD6: number = 0;
     let enemyD6: number = 0;
 
-    // Player attacks (first), then monster attacks => one round
-    while (player.life > 0 && enemy.life > 0) {
-      playerD6 = Math.ceil(Math.random() * 6);
-      enemyD6 = Math.ceil(Math.random() * 6);
-      
-      //they need to succeed on their diceRoll to hit
-      if(playerD6 >= 3) enemy.life -= 2; //player's dmg to be discussed
-      if(enemyD6 === 5) player.life -= player.armor - enemy.damage;      
-      if(enemyD6 === 6) player.life -= enemy.damage; //ignores armor on crit
-    }
+    playerD6 = Math.ceil(Math.random() * 6);
+    enemyD6 = Math.ceil(Math.random() * 6);
+
+    if (playerD6 >= 2) enemy.life -= this.playerDamageRoll(player);
+    if (enemyD6 === 5) player.life -= player.armor - enemy.damage;
+    if (enemyD6 === 6) player.life -= enemy.damage; //ignores armor on crit
+
+    return playerD6;
+  }
+
+  playerDamageRoll(player: Player): number {
+    let damage: number = 0;
+    for (let i = 0; i < player.die; i++) damage += Math.ceil(Math.random() * 6);
+    return damage;
   }
 
 }

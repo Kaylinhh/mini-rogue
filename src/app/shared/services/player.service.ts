@@ -35,4 +35,9 @@ export class PlayerService {
     else return this._hardPlayer;
   }
 
+  setLife(life: number): Player { //testing out with normal player
+    this._normalPlayer.life += life;
+    return this._normalPlayer;
+  }
+
 }

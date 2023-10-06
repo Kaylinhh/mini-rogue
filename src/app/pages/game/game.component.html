@@ -4,6 +4,7 @@
 
 <button (click)="randomEvent()">Change event</button>
 
+<div *ngIf="player.life > 0">
 
 <app-camp *ngIf="event === 'camp'"
     [player]="player"
@@ -28,3 +29,7 @@
 <app-map *ngIf="event === 'door'" (nextEvent)="next($event)"></app-map>
 <app-boss *ngIf="event === 'boss'" [player]="player" (nextEvent)="next()"></app-boss>
 <app-rest *ngIf="event === 'rest'" [player]="player" (nextEvent)="next()"></app-rest>
+
+</div>
+
+<app-game-over *ngIf="player.life <= 0"></app-game-over>

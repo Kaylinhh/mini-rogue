@@ -16,8 +16,7 @@ export class RestComponent {
   @Output() nextEvent: EventEmitter<string> = new EventEmitter;
 
   constructor(
-    private playerService: PlayerService,
-    private eventService: EventService
+    private playerService: PlayerService
   ) { }
 
   ngOnInit(): void {
@@ -28,10 +27,5 @@ export class RestComponent {
 
   next(): void {
     this.nextEvent.emit(this.event);
-    this.eventService.next(this.event);
-    // this.player.currentEncounter = 0;
-    // this.player.currentFloor += 1;
-    // this.playerService._setPlayer$(this.player);
-
   }
 }

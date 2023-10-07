@@ -21,6 +21,7 @@ export class BossComponent implements OnInit {
   bossDieRoll: number = 0;
   playerD6: number = 0;
   isFighting: boolean = false;
+  retry: boolean = false;
 
   constructor(
     private monsterService: MonsterService,
@@ -35,11 +36,15 @@ export class BossComponent implements OnInit {
   };
 
   fight(): void {
-    this.playerD6 = this.monsterService.fight(this.player, this.boss);
+    this.playerD6 = this.monsterService.fight(this.player, this.boss, this.retry);
     this.isFighting = true;
     if (this.boss.life <= 0) this.isFighting = false;
   }
-  
+
+  tryAgain() {
+    this.retry = true;
+  }
+
   next(): void {
     this.nextEvent.emit();
   }

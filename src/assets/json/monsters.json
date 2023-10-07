@@ -2,7 +2,7 @@
     {
         "img": "",
         "name": "Big Foot",
-        "life": 7,
+        "life": 23,
         "damage": 2,
         "loot": "something",
         "zoneNumber": 1
@@ -10,7 +10,7 @@
     {
         "img": "",
         "name": "Chupacabra",
-        "life": 5,
+        "life": 32,
         "damage": 1,
         "loot": "another thing",
         "zoneNumber": 1
@@ -18,7 +18,7 @@
     {
         "img": "",
         "name": "test",
-        "life": 5,
+        "life": 15,
         "damage": 1,
         "loot": "another thing",
         "zoneNumber": 2

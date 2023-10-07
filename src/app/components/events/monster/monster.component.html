@@ -6,17 +6,24 @@
         ATK: {{ monster.damage }}
     </div>
 
-    <button *ngIf="monster.life > 0 && player.life > 0" (click)="fight()">FIGHT</button>
+    
+    <div *ngIf="isFighting">
+        
+        <div *ngIf="playerD6 < 2 && player.experience > 0">
+            <p> You missed! Would you like to try again for 1xp?</p>
+            <button (click)="tryAgain()">Yes</button>
+        </div>
 
-    <div  *ngIf="isFighting">
-        <p *ngIf="playerD6 < 2">
-            Miss!
-        </p>
+        <p *ngIf="playerD6 < 2 && player.experience === 0">Miss!</p>
         <p *ngIf="playerD6 >= 2">
             Hit!
         </p>
+
     </div>
+
+    <button *ngIf="monster.life > 0 && player.life > 0" (click)="fight()">ATTACK</button>
+
     <p *ngIf="monster.life <= 0">You won!</p>
-   
+
     <button *ngIf="monster.life <= 0" (click)="next()">Poursuivre</button>
 </div>

@@ -1,8 +1,5 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
-import { Monster } from 'src/app/models/monster.model';
 import { Player } from 'src/app/models/player.model';
 import { PlayerService } from './player.service';
 

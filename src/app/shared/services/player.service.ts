@@ -8,7 +8,7 @@ import { LocalStorageService } from './local-storage.service';
 })
 export class PlayerService {
 
-  private _normalPlayer: Player = new Player(12,0,10,5,0,[],[],1,"[door]",0,4,1,7,1,[2,4,7],"protector");
+  private _normalPlayer: Player = new Player(12,1,10,5,0,[],[],1,"[door]",0,4,1,7,1,[2,4,7],"protector");
 
   private _hardPlayer: Player = new Player(10,0,5,2,0,[],[],1,"[door]",1,6,1,8,1,[2,4,8],"protector");
 
@@ -33,6 +33,11 @@ export class PlayerService {
   getStartingStats(value: string): Player {
     if(value === "normal") return this._normalPlayer;
     else return this._hardPlayer;
+  }
+
+  setLife(life: number): Player { //testing out with normal player
+    this._normalPlayer.life += life;
+    return this._normalPlayer;
   }
 
 }

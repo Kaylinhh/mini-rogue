@@ -12,6 +12,8 @@ export class MonsterService {
 
   monster: Observable<Monster[]> = this.http.get<Monster[]>("/assets/json/monsters.json");
   boss: Observable<Boss[]> = this.http.get<Boss[]>("/assets/json/bosses.json");
+  playerD6: number = 0;
+  enemyD6: number = 0;
 
   constructor(private http: HttpClient) { }
 
@@ -35,20 +37,45 @@ export class MonsterService {
     );
   }
 
-  fight(player: Player, enemy: Monster | Boss) {
-    let playerD6: number = 0;
-    let enemyD6: number = 0;
+  fight(player: Player, enemy: Monster | Boss, retry: boolean): number {
 
-    // Player attacks (first), then monster attacks => one round
-    while (player.life > 0 && enemy.life > 0) {
-      playerD6 = Math.ceil(Math.random() * 6);
-      enemyD6 = Math.ceil(Math.random() * 6);
-      
-      //they need to succeed on their diceRoll to hit
-      if(playerD6 >= 3) enemy.life -= 2; //player's dmg to be discussed
-      if(enemyD6 === 5) player.life -= player.armor - enemy.damage;      
-      if(enemyD6 === 6) player.life -= enemy.damage; //ignores armor on crit
+    this.playerD6 = Math.ceil(Math.random() * 6);
+    this.enemyD6 = Math.ceil(Math.random() * 6);
+
+    if(this.playerD6 <= 2 && player.experience > 0 && retry === true) {
+      player.experience -= 1;
+      this.playerD6 = Math.ceil(Math.random() * 6);
+      return this.playerD6;
+    } else if(this.playerD6 <= 2 && player.experience === 0) {
+      this.playerAttack(player, enemy);
+      this.enemyAttack(player, enemy);
+      return this.playerD6;
+    } else {
+      this.playerAttack(player, enemy);
+      this.enemyAttack(player, enemy);
+      return this.playerD6;
     }
+  }
+
+  playerAttack(player: Player, enemy: Monster | Boss): void {
+    if (this.playerD6 >= 2) enemy.life -= this.playerDamageRoll(player); //need to roll a 2 or higher to hit
+
+  }
+
+  enemyAttack(player: Player, enemy: Monster | Boss): number {
+    if (this.enemyD6 <= 5){
+      player.life -= enemy.damage - player.armor;
+      return enemy.damage - player.armor;
+    } else {
+      player.life -= enemy.damage; //ignores armor on crit
+      return enemy.damage;
+    } 
+  }
+
+  playerDamageRoll(player: Player): number {
+    let damage: number = 0;
+    for (let i = 0; i < player.die; i++) damage += Math.ceil(Math.random() * 6);
+    return damage;
   }
 
 }

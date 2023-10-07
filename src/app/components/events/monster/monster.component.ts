@@ -18,6 +18,9 @@ export class MonsterComponent implements OnInit {
 
   monster!: Monster;
   monsterList!: Monster[];
+  playerD6: number = 0;
+  isFighting: boolean = false;
+  retry: boolean = false;
 
   constructor(
     private monsterService: MonsterService,
@@ -36,8 +39,14 @@ export class MonsterComponent implements OnInit {
   };
 
   fight(): void {
-    this.monsterService.fight(this.player, this.monster);
-    this.playerService._setPlayer$(this.player);
+    this.playerD6 = this.monsterService.fight(this.player, this.monster, this.retry);
+    this.isFighting = true;
+    if (this.monster.life <= 0) this.isFighting = false;
+  }
+
+  tryAgain() {
+  this.retry = true;
+  this.fight();
   }
 
   next(): void {

@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Boss } from 'src/app/models/boss.model';
 import { Player } from 'src/app/models/player.model';
-import { EventService } from 'src/app/shared/services/events.service';
 import { MonsterService } from 'src/app/shared/services/monster.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 
@@ -19,12 +18,13 @@ export class BossComponent implements OnInit {
   bossList!: Boss[];
   playerDieRoll: number = 0;
   bossDieRoll: number = 0;
-  event: string = "boss";
+  playerD6: number = 0;
+  isFighting: boolean = false;
+  retry: boolean = false;
 
   constructor(
     private monsterService: MonsterService,
-    private playerService: PlayerService,
-    private eventService: EventService
+    private playerService: PlayerService
   ) { }
 
   ngOnInit(): void {
@@ -35,13 +35,18 @@ export class BossComponent implements OnInit {
   };
 
   fight(): void {
-    this.monsterService.fight(this.player, this.boss);
-    this.playerService._setPlayer$(this.player);
+    this.playerD6 = this.monsterService.fight(this.player, this.boss, this.retry);
+    this.isFighting = true;
+    if (this.boss.life <= 0) this.isFighting = false;
   }
-  
+
+  tryAgain() {
+    this.retry = true;
+    this.fight();
+  }
+
   next(): void {
     this.nextEvent.emit();
-    
   }
   
 }

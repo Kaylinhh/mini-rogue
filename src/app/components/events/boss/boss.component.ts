@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Boss } from 'src/app/models/boss.model';
 import { Player } from 'src/app/models/player.model';
-import { EventService } from 'src/app/shared/services/events.service';
 import { MonsterService } from 'src/app/shared/services/monster.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 
@@ -43,6 +42,7 @@ export class BossComponent implements OnInit {
 
   tryAgain() {
     this.retry = true;
+    this.fight();
   }
 
   next(): void {

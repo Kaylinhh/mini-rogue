@@ -1,5 +1,6 @@
 <h1>oh no un monstre</h1>
 <div *ngIf="monster">
+    <img [src]="monster.img" class="img">
     <div>
         {{ monster.name }}
         PV: {{ monster.life }}

@@ -18,13 +18,14 @@ export class MonsterComponent implements OnInit {
 
   monster!: Monster;
   monsterList!: Monster[];
+  event: string = "";
   playerD6: number = 0;
   isFighting: boolean = false;
   retry: boolean = false;
 
   constructor(
     private monsterService: MonsterService,
-    private playerService: PlayerService,
+    private eventService: EventService,
     private lss: LocalStorageService
   ) { }
 

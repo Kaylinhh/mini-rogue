@@ -38,25 +38,26 @@ export class EventService implements OnInit {
         switch (true) {
             case event === "boss":
                 this.goToRest();
-                break;
+                this.setEvent$(this.event);
+                return "[rest]";
             case this.player.currentEncounter === this.player.maxEncounter && this.player.bossFloor.includes(this.player.currentFloor):
                 this.event = "boss";
-                break;
+                this.setEvent$(this.event);
+                return "[boss]";
             case this.player.currentEncounter === this.player.maxEncounter:
                 this.goToRest();
-                break;
+                this.setEvent$(this.event);
+                return "[rest]";
             case event === "door":
                 if (chosenDoor) this.event = chosenDoor;
-                break;
+                this.setEvent$(this.event);
+                return "[" + this.event + "]";
             default:
                 this.player.currentEncounter += 1;
                 this.event = "door";
-                this.randomDoors();
-                break;
+                this.setEvent$(this.event);
+                return "[door]";
         }
-        
-        this.setEvent$(this.event);
-        return { player: this.player, event: this.event };
     }
 
     randomEvent() {
@@ -86,21 +87,16 @@ export class EventService implements OnInit {
         while (door2 === door1) {
             door2 = this.randomEvent();
         }
-
         return [door1, door2];
     }
 
-    goToRest(): Player {
+    goToRest() {
         this.event = "rest";
         this.player.food -= this.foodNeeded;
         if (this.player.food < 0) this.playerService.setLife(-5);
         this.playerService.setLife(5);
         this.player.currentEncounter = 0;
         this.player.currentFloor += 1;
-
-        return this.player;
     }
-
-
 
 }

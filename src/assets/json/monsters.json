@@ -1,26 +1,10 @@
 [
     {
-        "img": "",
-        "name": "Big Foot",
-        "life": 23,
+        "img": "../../../../assets/img/encounters/monster/1/cactus-cat.jpeg",
+        "name": "Cactus Cat",
+        "life": 5,
         "damage": 2,
         "loot": "something",
         "zoneNumber": 1
-    },
-    {
-        "img": "",
-        "name": "Chupacabra",
-        "life": 32,
-        "damage": 1,
-        "loot": "another thing",
-        "zoneNumber": 1
-    },
-    {
-        "img": "",
-        "name": "test",
-        "life": 15,
-        "damage": 1,
-        "loot": "another thing",
-        "zoneNumber": 2
     }
 ]

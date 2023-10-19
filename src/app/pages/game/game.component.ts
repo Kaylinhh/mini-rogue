@@ -23,14 +23,16 @@ export class GameComponent {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
-      // if (this.player.status.match(/^\[[a-z]/)) this.event = "door";
-      // else if (this.player.status.match(/^\[B/)) this.event = "boss";
-      // else if (this.player.status.match(/^\[C/)) this.event = "camp";
-      // else if (this.player.status.match(/^\[L/)) this.event = "loot";
-      // else if (this.player.status.match(/^\[M/)) this.event = "monster";
-      // else if (this.player.status.match(/^\[S/)) this.event = "shop";
-      // else if (this.player.status.match(/^\[T/)) this.event = "trap";
-      // else this.event = "door";
+      this.player.status = this.eventService.next(this.event);
+      if (this.player.status.match(/^\[[a-z]/)) this.event = "door";
+      else if (this.player.status.match(/^\[B/)) this.event = "boss";
+      else if (this.player.status.match(/^\[C/)) this.event = "camp";
+      else if (this.player.status.match(/^\[L/)) this.event = "loot";
+      else if (this.player.status.match(/^\[M/)) this.event = "monster";
+      else if (this.player.status.match(/^\[R/)) this.event = "rest";
+      else if (this.player.status.match(/^\[S/)) this.event = "shop";
+      else if (this.player.status.match(/^\[T/)) this.event = "trap";
+      else this.event = "door";
     });
     this.eventService.getEvent$().subscribe((event: string) => {
       this.event = event;      

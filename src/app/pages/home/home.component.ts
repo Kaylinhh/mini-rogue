@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Player } from 'src/app/models/player.model';
+import { Role } from 'src/app/models/role.model';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { PlayerService } from 'src/app/shared/services/player.service';
 
@@ -16,10 +18,23 @@ export class HomeComponent {
 
   startingStats!: Player;
 
+  allRoles!: Role[];
+
+  roleSelected: string = "";
+
+  roleDescription: string = "";
+
   constructor(
     private lss: LocalStorageService,
-    private playerService: PlayerService
-    ){}
+    private playerService: PlayerService,
+    private httpClient: HttpClient
+  ){}
+  
+  ngOnInit(): void {
+    this.httpClient.get("assets/json/role.json").subscribe((data: any) => {
+      this.allRoles = data;
+    });
+  }
 
   isGameSave(): boolean {
     return this.lss.exist();
@@ -32,10 +47,14 @@ export class HomeComponent {
   setDifficulty(value: string): void {
     this.difficultyChoosed = value;
     this.startingStats = this.playerService.getStartingStats(value);
+    this.setCharacterRole("archer");
   }
 
-  setCharacterClass(value: string): void {
-    this.startingStats.characterClass = value;
+  setCharacterRole(value: string): void {
+    this.startingStats.role = value;
+    for(let i = 0; i < this.allRoles.length; i++){
+      if (this.allRoles[i].en === value) this.roleDescription = this.allRoles[i].desc;
+    }
   }
 
   launch(): void {

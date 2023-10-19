@@ -86,9 +86,17 @@ export class TrapComponent {
 
   whiteDiceReceive(dice: number[]): void {
     this.whiteDice = dice;
+    if(this.player.role === "thief"){
+      for(let i = 0; i < this.whiteDice.length; i++){
+        if(this.whiteDice[i] === Math.min(...this.whiteDice)){
+          this.whiteDice[i] += 2;
+          if(this.whiteDice[i] > 6) this.whiteDice[i] = 6;
+        }
+      }
+    }
     this.isWhiteDiceSucced = false;
-    for(let i = 0; i < dice.length; i++){
-      if(dice[i] >= 5){
+    for(let i = 0; i < this.whiteDice.length; i++){
+      if(this.whiteDice[i] >= 5){
         this.isWhiteDiceSucced = true;
       }
     }

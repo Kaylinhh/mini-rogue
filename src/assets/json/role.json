@@ -1,0 +1,6 @@
+[
+    {"en":"archer", "fr":"Archère", "desc":"L'archère a un dé de plus d'attaque lors du premier round de chaque combat."},
+    {"en":"bloodmage", "fr":"Hémomancienne", "desc":"L'hémomancienne peut perdre 1 point de vie pour gagner 1 point de défense juste pour le combat en cours."},
+    {"en":"protector", "fr":"Protecteur", "desc":"Le protecteur peut perdre 1 point de défense pour infliger 3 points de dégat."},
+    {"en":"thief", "fr":"Roublard", "desc":"Le roublard a un bonus de +2 au son dé le plus faible lors d'une rencontre avec un piège."}
+]

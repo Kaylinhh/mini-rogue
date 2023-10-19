@@ -15,6 +15,6 @@ export class Player {
         public maxFloor: number,
         public currentZone: number,
         public bossFloor: number[],
-        public characterClass: string
+        public role: string
     ){}
 }

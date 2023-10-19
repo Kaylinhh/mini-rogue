@@ -21,7 +21,7 @@ export class LocalStorageService {
     }
 
     save(player: Player): void {
-        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.bonus + ";" + player.penalty + ";" + player.die + ";" + player.status + ";" + player.currentEncounter + ";" + player.maxEncounter + ";" + player.currentFloor + ";" + player.maxFloor + ";" + player.currentZone + ";" + player.bossFloor + ";" + player.characterClass;
+        let value: string = player.life + ";" + player.experience + ";" + player.gold + ";" + player.food + ";" + player.armor + ";" + player.bonus + ";" + player.penalty + ";" + player.die + ";" + player.status + ";" + player.currentEncounter + ";" + player.maxEncounter + ";" + player.currentFloor + ";" + player.maxFloor + ";" + player.currentZone + ";" + player.bossFloor + ";" + player.role;
         localStorage.setItem('MiniRogueGameSave', value);
     }
 

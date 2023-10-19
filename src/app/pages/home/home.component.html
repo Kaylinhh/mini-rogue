@@ -44,11 +44,20 @@
     </form>
     <br>
     <div *ngIf="startingStats">
-        <h2>Character class</h2>
-        <button *ngFor="let className of ['protector', 'bloodmage', 'archer']" (click)="setCharacterClass(className)" [ngClass]="startingStats.characterClass === className ? 'class-selected' : ''">{{ className }}</button>
+        <h2>
+            Character class
+        </h2>
+        <button *ngFor="let className of allRoles" (click)="setCharacterRole(className.en)" [ngClass]="startingStats.role === className.en ? 'class-selected' : ''">
+            {{ className.fr }}
+        </button>
+        <p>
+            {{ roleDescription }}
+        </p>
     </div>
     <br>
-    <button (click)="launch()" [routerLink]="['/game']" [disabled]="!difficultyChoosed">Launch</button>
+    <button (click)="launch()" [routerLink]="['/game']" [disabled]="!difficultyChoosed">
+        Launch
+    </button>
 </div>
 
 <app-footer></app-footer>

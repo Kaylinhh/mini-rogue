@@ -27,8 +27,16 @@ export class MapComponent implements OnInit {
   ngOnInit(): void {
     this.playerService._getPlayer$().subscribe((player: Player) => {
       this.player = player;
+      if (this.player.status.match(/^\[[A-Z]+/g) || this.player.status.match(/\[door\]/g)){
+        this.doorList = this.eventService.randomDoors();
+        let doorListString: string = "[" + this.doorList[0] + "," + this.doorList[1] + "]";
+        this.lss.update(doorListString);
+      } else {
+        this.doorList[0] = ((this.player.status.match(/[a-z]+/g) as string[])[0] as string);
+        this.doorList[1] = ((this.player.status.match(/[a-z]+/g) as string[])[1] as string);
+      }
     });
-    this.doorList = this.eventService.randomDoors();
+    
   }
 
   next(chosenDoor: string){

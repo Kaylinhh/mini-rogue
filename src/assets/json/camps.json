@@ -1,35 +1,35 @@
 [
     {
-        "name": "Repos au calme",
-        "description": "...dodo",
+        "name": "Un repos bien mérité",
+        "description": ["Vous trouvez facilement un arbre au tronc épais et aux branches robustes. Vous l'escaladez avec quelques difficultés, surtout sur les premiers mètres car les branches les plus basses sont tout de même assez élevées. Tant mieux, cela vous évitera les animaux sauvages qui rôdent. Vous montez un peu plus et faites un nid avec les branchages plus fins et flexibles. Vous pouvez maintenant vous apaiser sans risque.", "Vous tombez sur une vielle ferme abandonnée, quelle aubaine ! Après un rapide coup d'oeil à l'intérieur, vous décidez de vous y arrêter. Elle est bien isolée du froid et semble saine. Vous vous sentez en sécurité à l'intérieur. La chance est avec vous car vous dénichez un matelas. Très rustique, d'une autre époque, mais vous devrez vous en contenter. Vous vous préparez à un sommeil court mais réparateur.", "De l'eau plein les bottes à force de marcher entre les roseaux, vous remontez la rive en direction d'une habitation sur pilotis que vous avez repéré en descendant la colline. Le lieu est visible et exposé, mais votre fatigue est telle qu'il vous faut dormir du repos au plus vite. Après cinq minutes à attendre au pied de l'habitation, ne déscelant aucun danger, vous décidez de grimper les barreaux de l'échelle. Les bambous bruissent au vent, le lieu semble calme. Un large tapis de jonc au sol permet de ne pas glisser. Pas le temps de réfléchir plus, les monstres rôdent non loin, vous enclenchez le mécanisme qui vous réveillera dans trop peu de temps."],
         "reward": {
-            "quantity": 1,
+            "quantity": 5,
             "type": "life"
         }
     },{
         "name": "Méditation",
-        "description": "...pour apprendre",
+        "description": ["Assis devant les gravures du fronton du temple, vous essayez de déchiffrer ce que cela signifie. Est-ce le nom de ce bâtiment ? Son, sa ou même ses propriétaires ? Il y a un signe qui se répète, cela pourrait être la séparation des noms. Ou bien une référence à un Dieu ? Est-ce que ce symbole ci était juste là pour décorer ? Il semblait que oui. Et donc cette barre horizontale surmontée d'un point devait être la séparation, et ce faisant ce demi-cercle croisé était sûrement la même utilisation que nous faisons de la majuscule. À force de réflexion vous comprenez de mieux en mieux comment vous orienter et poursuivre votre voie.", "Vous tournez lentement sur vous même au centre de ce cercle de pierres levées. Votre regard passe de l'une à l'autre, elles se ressemblent tellement. Au deuxième tour vous remarquez des aspérités dans l'une, puis une entaille dans l'autre, une exubérance sur la troisième. Finalement elles ne sont pas si identiques. Vous pourriez mainteant même dire que celle-ci a quelle que chose de bestiale, un peu comme un ours. Et celle-là finalement n'est pas vraiment une pierre mais vous diriez plutôt un tronc fossilisé, avec sa mousse qui commence à onduler au vent. Et vous sentez une forme de légèretée sur celle à l'opposée, comme un oiseau, avec, vous vous en rendez compte maintenant, comme un courant d'air qui y émanerait. Vous vous rendez compte de l'apprentissage que ces pierres peuvent vous enseigner.", "La porte est inmanquable. Elle se découpe pleinnement sur le fond azure du ciel. Vous passez de pierre en pierre pour arriver au sommet de la colline la supportant. Des bougies colorées sont aux pieds de la porte. Elles sont taillées en biseau et des inscriptions noires et dorées ont étées gravées dans leur cire. Un symbole semble se répéter, se dégager du lot. Vous vous asseyez devant la porte, remarquant que l'attraction n'est plus tant terrestre mais plus en direction de cette dernière. Vous remarquez des veines sur la porte. En plisant les yeux il vous semble qu'elles palpitent, qu'elle ondulent et se réarrangent même. Vous croyez même entre apercevoir le même symbole que sur les bougies. Cela est plus clair pour vous, vous commencez à comprendre ce que la porte a à vous dire."],
         "reward": {
             "quantity": 1,
             "type": "experience"
         }
     },{
-        "name": "Création de babioles",
-        "description": "...trucs à vendre",
+        "name": "Préparer la prochaine vente",
+        "description": ["Vous fouillez la forêt alentour dans l'optique de trouver des plantes et fleurs à vendre. Vous ramassez également des branches tombées au sol et entâmez la sculpture d'une d'entre elle. Puis d'une autre. Vous créez ainsi des totems, des colliers avec des pendentifs ornementaux, et autres gravures sur bois, que vous revendrez pour sûr.", "Dans ce village abandoné vous décidez d'y passer du temps pour une fois. Vous fouillez les maisons à la recherche d'objets qui pourraient facilement se revendre. Et ne pas peser trop lourd. Vous trouvez un vase ornementé, des sculpures en fer forgé, quelques oeuvres d'art, un vaisselier pas trop fissuré, et quelques décorations qui pourraient plaire lors de vos futurs ventes.", "Au passage d'un lac, parmis tous ceux rencontrés, vous remplissez une de vos fiole de cette eau pure. Vous cueillez quelques nénuphares, des racines de cette plante aux feuilles palmaires si distinctives, des graines de celle avec des rayures, et récoltez des oeufs translucide des animaux aquatiques du lac. Il est certain que vous en tirerez un bon prix au vu de la qualité de ces eaux."],
         "reward": {
-            "quantity": 1,
+            "quantity": 7,
             "type": "gold"
         }
     },{
         "name": "Chasser",
-        "description": "...miam",
+        "description": ["La jungle est grouillante de petites créatures bien en chair ou de fruits délicieux. Il vous est donc facile de prendre ce dont vous avez besoin, il vous suffit de vous baisser ou de jeter un regard autour de vous. Très peu de choses sont cachées et les potentiels aliments toxiques vous sont aisement reconnaissable.", "Quelques buissons de baies et quelques empruntes d'ongulés parsèment le chemin. Vous entendez un petit cours d'eau passer non loin de là. Et qui dit cours d'eau dit animaux et végétations aini fertilisées. Vous sortez du sentier pour vous enfoncer plus profondement, à la recherche d'un maximum de nourriture avant de poursuivre votre trajet.", "Un bamboo taillé en guise de trident, trop fin pour de réelle menance, mais assez fin pour la chair des poissons de la rivière. Vous avez déjà commencé à faire sécher les algues du bord mais vous savez que vous pouvez en trouver des plus denses qui vous alimenteront d'autant plus. Il suffit de chercher et vous vous mettez ainsi en quête d'un nourriture plus conséquente, prenez votre temps mais combien nécessaire."],
         "reward": {
-            "quantity": 1,
+            "quantity": 2,
             "type": "food"
         }
     },{
         "name": "S'entraîner",
-        "description": "...pour dodge",
+        "description": ["Quoi de mieux que des lianes qui se balancent toutes seules pour apprendre à éviter l'imprévisible ? Vous profitez de cette zone d'entraînement improvisée pour développer vos esquives, vos réflexes, et votre anticipation des mouvements. Flexion, pas de côté, regard à gauche, à droite, vous effectuez ces mouvements encore et encore, jusqu'à ce que les lianes ne vous fouettent plus le corps en continue.", "C'est parti pour la collecte de tout un tas de matériaux anthropologiques, des bouts de cuirs, de métal, tout bric-à-brac d'objets disparates. Une fois vos trouvailles regroupées, vous commencez à les assembler les unes avec les autres, avec un semblant de logique pour qu'elles tiennent, les unes imbriquées dans les autres. La protection que cela vous procure est ainsi renforcée.", "L'endroit vous semble idéal pour entamer une danse : sol plat et juste assez mou pour réceptionner les réceptions de sauts, mais assez dur pour prendre appuie sans s'enfoncer. Vous avez le pont en vision au cas où, et vous commencez à tourner autour de galets déposés par vos soins. Un pas sauté, un enchaînement de deux courts, puis une virevolte, une réception en demi-lune, un pas allongé, et vous fauchez l'air de vos gestes, arrêtant votre mouvement au dessus de certains galets. Cette danse vous permet de réveiller vos muscles et vos sens, vous vous sentez plus à l'aise pour éviter les prochains assaults."],
         "reward": {
             "quantity": 1,
             "type": "armor"

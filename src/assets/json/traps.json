@@ -2,24 +2,24 @@
     [{
         "id": 1,
         "name": "Jungle luxuriante",
-        "description": "XXX...",
+        "description": "Vous vous enfonssez de plus en plus dans la jungle, entre les fleurs énormes au odeurs entêtantes, les fougères aux hauteurs variées, les troncs moussus à enjamber, et les zones humides à franchir des plus vite. Et c'est justement au détour d'une d'un fourré que vous tombez sur...",
         "linesOfEffect": [
             {
-                "blackDie": [1,2],
-                "negativeText": "...very sharped",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [1,2,3],
+                "negativeText": "un étang rempli de moustiques dragon. Vous resserez vos bottes et commencez à vous enfoncer dans l'eau. Leurs piqures passent vos habits.",
+                "positiveText": "Mais cet étang attire ces énormes insectes pour une bonne raison. Après observation vous découvrez de petites fleurs blanches le long des berges. En les mangeant cela vous redonne des forces et les moustiques s'intéressent moins à vous.",
+                "negativeEffect":[{"quantity":1, "type":"life"}],
+                "positiveEffect":[{"quantity":3, "type":"life"}]
             },
             {
-                "blackDie": [3,4],
-                "negativeText": "...with poison",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [4,5],
+                "negativeText": "une énorme plante carnivore. Vous êtes surpris de ne pas l'avoir observé de plus loin, malgré la densité de la végétation. Impossible de la contouorner, faire un détour dans cette jungle sera synonyme de perte de votre orientation. Il vous faut la distraire.",
+                "positiveText": "Vous profitez de votre distraction pour récupérer une de ces glandes gluantes, vous pourrez l'utiliser contre un ennemi cherchant la confrontation.",
+                "negativeEffect":[{"quantity":2, "type":"food"}],
+                "positiveEffect":[{"quantity":1, "type":"potion-poison"}]
             },
             {
-                "blackDie": [5,6],
+                "blackDie": [6],
                 "negativeText": "...deadly",
                 "positiveText": "...small",
                 "negativeEffect":[{"quantity":1, "type":"gold"}],

@@ -55,16 +55,16 @@
             {
                 "blackDie": [1,2,3,4],
                 "negativeText": "et entrez dans le temple. Au premier coup d'oeil vous remarquez qu'il est peu profond. La décoration y est surtout faites par les peintures directement aux murs, les bougies et les babioles éparpillées dans toute la pièce. Vous entrez entièrement et sentez desuite comme une lourdeur vous assaillir, vous attirer vers le sol. Pourtant vous avez envie d'avancer, de toucher ce glyphe au mur, le centre de ce cercle rouge. Vous faites quelques pas de plus et vous retrouvez devant la pierre, votre main au contact de la peinture.",
-                "positiveText": "...small",
+                "positiveText": "Après un temps incalculable, vous sortez de votre létargie et regardez autour de vous. Plus de peinture, mais les objets sont toujours là. Vous les récupérez, conscient de cela : vous pourrez tirer un bon prix de ces petits artefacts.",
                 "negativeEffect":[{"quantity":1, "type":"penalty-pointless"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":1, "type":"experience"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "de nombreuses inscription colorées le parcours. Vous vous penchez pour l'étudier de plus prêt. Un pattern semble se répéter... sauf à cet endroit. Il y a comme une cassure dans les inscriptions, un changement dans les serpentins qui s'enlassent. Portant votre attention plus précisement à cet endroit, vous y apposez vos mains pour entourer ce passage et ainsi concentrer votre attention dessus. Ici, une genre de goutte ou de larme semble comme effacée. Mu par un mouvement inexpliqué, vos doigts se posent sur cette ornementation et la fond tourner, puis vous appuyez. Le pan de l'autel s'affaisse avec fracas. À l'intérieur en sort de nombreuse araignées, qui se répendent sur votre corps. Vous les chassez à grand geste mais l'une d'elle vous pique.",
+                "positiveText": "Vous l'écrasez d'un coup sec et précis, avant de faire place net pour contempler le trésor qui coule de l'autel. La joie se lie sur votre visage. Ne pensant plus à la douleur à votre main, vous remplissez vos poches de ces objets incrustés de pierres précieuses.",
+                "negativeEffect":[{"quantity":3, "type":"life"},{"quantity":1, "type":"penalty-poison"}],
+                "positiveEffect":[{"quantity":12, "type":"gold"},{"quantity":3, "type":"experience"}]
             }
         ]
     },{
@@ -76,7 +76,7 @@
                 "blackDie": [1,2,3,4],
                 "negativeText": "...small",
                 "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "negativeEffect":[{"quantity":1, "type":"food"}],
                 "positiveEffect":[{"quantity":1, "type":"gold"}]
             },
             {

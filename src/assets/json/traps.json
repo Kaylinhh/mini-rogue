@@ -117,7 +117,7 @@
     },{
         "id": 6,
         "name": "Fleurs intriguantes",
-        "description": "Quoi de plus beau que des fleurs épanouies, qui plus est un champ de ces fleurs avec de douces odeurs ? Pas grand chose ces derniers temps, alors pourquoi pas en profiter pour traverser ce champs d'un pas léger ?",
+        "description": "Quoi de plus beau que des fleurs épanouies, qui plus est un regroupement de ces fleurs avec de douces odeurs ? Pas grand chose ces derniers temps, alors pourquoi pas en profiter pour traverser ce champs d'un pas léger ?",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
@@ -128,20 +128,27 @@
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "Vos pas ce sont lours et votre tête se perd un peu, papillonne. Vous vous écroulez rapidement au milieu des fleurs, déjà entrain de dormir. Vous vous réveillez la nuit, mal au crâne et la faim au ventre. Les fleurs se sont fermées, leurs odeurs se sont estompées. Vous pouvez donc rester en cet endroit pour manger un peu de vos rations de nourriture avant de repartir.",
+                "positiveText": "Une fois le repas terminé, vous profitez de ce lieu pour faire votre cueillette, de quoi vous aventager pour les prochaines étapes du voyage.",
+                "negativeEffect":[{"quantity":2, "type":"food"},{"quantity":1, "type":"penalty-blindess"}],
+                "positiveEffect":[{"quantity":1, "type":"potion-XXX"},{"quantity":1, "type":"potion-XXX"}]
             }
         ]
     },{
         "id": 7,
         "name": "Canyon encaissé",
-        "description": "XXX...",
+        "description": "Vous sortez de la végétation pour arriver sur un plateau dominant un canyon. Vous devez poursuivre donc cette direction, donc vous commencez à descendre les flancs de pierres au teintes orangés. Vous arrivez en bas et commencez à suivre le couloir tout tracé qui serpente nonchalement. La paisibilité du lieu, son petit cours d'eau et cette végétation plus sec vous fait presque oublié la raison de votre venue.",
         "linesOfEffect": [
             {
-                "blackDie": [1,2,3,4],
-                "negativeText": "...small",
+                "blackDie": [1],
+                "negativeText": "Un trou dans la falaise sur votre droite attire votre regard. Il est peu profond mais très long, et des formes sombres semblent posées dedans, tel des oiseaux dans un nid. En vous approchant de ces curieuses silhouettes, vous identifiez des habitations creusées dans la roche, des sortes d'enclos et lieu de stockage, des cuves et cavitées creuses. Vous vous approchez et décidez d'entrer dans un des batiments délabré, celui qui vous semble le plus grand. Une douce odeur de feuilles séchées s'en dégage. Vous époussetez et fouillez les lieux. Pas grand chose dans celui-ci. Vous ouvrez la dernière porte du premier étage, et la porte tombe lourdement sur le sol. Par un effet d'enchaînement des structures maintenant les poutres s'effondres tout comme le toit en bois qui vous tombe dessus ! Le pan de porte en terre battu vous protège en partie, mais un morceau de bois vous fait trébucher et vous tombez de tout votre long dans les débrits. Votre sac en est un peu déchiré. Vous décidez de partir de ces ruines sans intérêt.",
+                "positiveText": "Vous attendez que la poussière soit retombée avant de partir, et jettez un coup d'oeil à cette dernière pièce instable. De petites formes brillent malgré la poussière. Un coffre béant à été éventré par la chute du toit, et son contenu est maintenant répendu sur le sol. En cherchant avec minutie dans cette salle qui finalement n'est pas si intéressante que ça, vous découvrez des habits encore solide. Vous les assemblez pour que ces morceaux épars puissent devenir une protection.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":2, "type":"gold"}],
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":1, "type":"armor"}]
+            },
+            {
+                "blackDie": [2,3,4],
+                "negativeText": "...large",
                 "positiveText": "...small",
                 "negativeEffect":[{"quantity":1, "type":"gold"}],
                 "positiveEffect":[{"quantity":1, "type":"gold"}]

@@ -70,40 +70,47 @@
     },{
         "id": 4,
         "name": "Pyramide labyrinthique",
-        "description": "XXX...",
+        "description": "La grandeur de ce bâtiment vous fait vous sentir minuscule. Un indice doit se trouver à l'intérieur, il vous faut rentrer mais l'envie n'est pas là. Vous franchissez à contre-coeur l'arche de la pyramide, plissant les yeux pour mieux voir dans cet endroit faiblement éclairé. À peine les premiers pas réalisés qu'un choix s'offre à vous. Prendrez-vous le chemin de gauche, de droite, ou continuerez-vous tout droit ?",
         "linesOfEffect": [
             {
-                "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"food"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [1,2],
+                "negativeText": "À gauche toute ! Votre choix a été fait après réflexion, en observant et écoutant bien tout les élements à votre disposition. Vous avencez donc serrainement dans le long couloir qui n'en fini plus de tourner. D'autres choix se présentent et votre réflexion vous emmène toujours plus loin dans cette pyramide. Au détour d'un enième couloir, vous appercevez une salle bien plus éclairée. Vous longez les murs, prenant grade de ne pas vous faire repérer. Clac ! Vous vous écartez d'un coup du mur, mais trop tard, des piques en sortent à une vitesse fulgurante et vous clouent sur l'autre mur, transperçant chairs et habits ! En s'arc-boutant vous arrivez à vous dégager non sans mal de cet accrochage indésirable. Le bruit déclanché ne semble pas avoir alerté les potentiels gardes que vous graignez de voir dans la pièce. Vous vous baissez malgré tout et avancez, cette fois-ci au centre du couloir. En arrivant dans la salle vous comprenez pourquoi personne n'est présent. La salle est vide.",
+                "positiveText": "Questionnant une fois de plus vos choix vous tournez en rond dans la salle, réflechissant à si il vou faut continuer ou rebrousser chemin. Vous décidez de vous reposer un instant en vous allongeant dans une sorte de baignoire de pierre grossièrement taillée dans la pierre. À votre réveil votre corps semble décontracté et votre esprit plus clair.",
+                "negativeEffect":[{"quantity":2, "type":"life"}],
+                "positiveEffect":[{"quantity":4, "type":"life"},{"quantity":2, "type":"experience"}]
+            },
+            {
+                "blackDie": [3,4],
+                "negativeText": "Toujours tout droit, les nombreux donjons parcours vous l'ont bien appris. Pas de réflexion sur les prochains embranchement : il faut toujours aller tout droit pour arriver au coeur de la pyramide. Une seule idée et une confiance débordante, vous avancez à grands pas, quand soudain... vous tombez dans un trou. Comment ? Vous ne seriez le dire, tout vous semblait pourtant si bien rouler. Et c'est c'est maintenant votre corps qui est en boule, et vous entrain de geindre. Vous reprenez votre souffle. Doucement. Puis vous remontez, enfin, vous essayez de remonter les murs lisses et glissants de votre trou. Cela vous semble impossible, et la peur de rester à désecher ici commence à poindre le bout de son nez. Mais vous vient l'idée d'utiliser une partie de vos armes, coincées dans le mur comme marche vers le haut du trou. Vous vous campez sur vos pieds pour utiliser toute vote force pour enfoncer certaines de vos armes dans les micro fissures de la pierre, et ainsi vous permettre de vous hisser et de sortir de trou. Heureusement !",
+                "positiveText": "Présentement en haut du trou, vous plissez les yeux pour observer la cause de votre chute. Un trompe l'oeil ! Vous pensiez marcher sur le sol mais c'est en fait une peinture qui était faite sur les pans du trou. Vous ferez plus attention la prochaine fois.",
+                "negativeEffect":[{"quantity":1, "type":"life"},{"quantity":1, "type":"penalty-pointless"}],
+                "positiveEffect":[{"quantity":3, "type":"experience"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "N'ayant pas d'idée, vous écoutez une voix dans votre tête qui vous dit de prendre à droite. Ni une ni deux vous vous enfonssez dans ce couloir qui vous semble pourtant plus obscure. Si bien que dans la pénombre vous ne voyez pas où vous marchez. Une flque d'eau vous fait glisser et vous dévalez la pente glissante, vous envoyant valdinguer sur l'angle du fond du couloir. Vous vous relevez péniblement puis continuez votre pogression.",
+                "positiveText": "Après cet incident facheux vous clodiquez lentement, mais vous arrivez tant bien que mal à le prochaine salle, visiblement celle de la bamboche. Des tables sont dressées et remplies de victuailles en tout genre. Vous ne perdez pas de temps, prennez quelques nourritures que vous conaissez et qui se conservent bien, puis filez au plus vite.",
+                "negativeEffect":[{"quantity":2, "type":"life"}],
+                "positiveEffect":[{"quantity":3, "type":"food"}]
             }
         ]
     },{
         "id": 5,
         "name": "Maraicages infestés",
-        "description": "XXX...",
+        "description": "Une fois de plus vous croisez un maraicage. Rien de bien surprenant dans cette partie du monde. Comme à votre habitude, vous étudiez les mouvements de l'eau, les berges et l'autre rive, les amas de bois pour identifier si ils sont natuels, puis entrez dans l'eau.",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "C'est au premier tiers du chemin que vous sentez des ondes dans l'eau et observez une vague se former sur votre gauche. Une vague qui se rapproche de vous. Impossible de courir dans un sens ou un autre pour éviter  a bête. Vous cherhez dans cette eau trouble avec vos pieds une racine pour coincer ces derniers et avoir un appuie au sol, un ancrage pouvant vous donner de la force dans vos mouvements. trouvé ! En position, un peu de coté, vous attendez la bête... qui ne se fait pas prier pour se propulser vers votre cou ! Vos deux mains ont juste le reflexe de dévier la machôîre béante de sa trajectoire, mais le poids de l'animal lancé à pleine allure vous entraîne et vous chutez. De vos mains et bras vous maintenez l'animal au sol, ne voulant surtout pas perdre le contact physique, une respiration et vous plongez entièrement, jugeant au touchez de votre corps pour l'immobiliser. Une lutte brève s'ensuit, vous perdez presque la prise sur l'animal mais au dernier moment vous arrivez à planter votre lame dans ce qu'il vous semble être la tête de ce dernier. Vous reprenez votre souffle tout en regardant autour de vous voir si il n'y en a pas d'autres, puis quittez prestement l'endroit. C'est en sortant sur berge que vous vous rendez compte que votre bras droit est sâlement amoché, et en vérifiant votre sac à dos vous constatez que vous avez perdus quelques monnaies durant votre lutte.",
+                "positiveText": "Vous déposez sur l'herbe l'animal tué que vous avez traîné, puis vous vous asseyez un instant pour reprendre vos idées. Puis, vous rapellant que vous avez de l'eau propre, vous lavez votre bras au mieux avant de l'enrober d'argile repérée plus haut sur la rive. Vous en peu plus pour les prochaines fois, et taillez grossièrement la viande de l'animal que vous venez de tuer.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":4, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"armor"},{"quantity":1, "type":"life"},{"quantity":2, "type":"food"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
+                "negativeText": "La traversée se fait sans encombre. L'eau semble plus froid qu'à l'habitude et une fois sur l'autre rive vous vous étonnez que le froid commence à remonter votre corps. Vous inspectez vos bottes, sortez vos pieds de celles-ci... Ils sont tachetés de piqures bleutées, boursouflés et vos veines plus apparentes. Votre coeur qui accélère de panique en voyant le venin provenant du dard de quelques animaux aquatiques n'est pas le bienvenue. Vous vous relevez, ne bougez plus et observez les alentours à la recherche de plantes utiles dans cette situation, pour vous faire ralentir le coeur, en l'endormissant, et évacuer les toxines par dégradation de celles-ci. Le froid arrive au bas de vos poumons quand vous trouvez enfin ces ingrédients. Vous mettez ces plantes entières dans la bouche, avant de vous coincer contre un arbe pour ne pas tomber.",
                 "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "negativeEffect":[{"quantity":1, "type":"penalty-blindess"}],
                 "positiveEffect":[{"quantity":1, "type":"gold"}]
             }
         ]

@@ -1,3 +1,5 @@
+import { Penalty } from "./penalty.model";
+
 export class Player {
     constructor(
         public life: number,
@@ -6,7 +8,7 @@ export class Player {
         public food: number,
         public armor: number,
         public bonus: string[],
-        public penalty: string[],
+        public penalty: Penalty,
         public die: number,
         public status: string,
         public currentEncounter: number,

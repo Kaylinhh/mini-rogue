@@ -2,139 +2,153 @@
     [{
         "id": 1,
         "name": "Jungle luxuriante",
-        "description": "XXX...",
+        "description": "Vous vous enfonssez de plus en plus dans la jungle, entre les fleurs énormes au odeurs entêtantes, les fougères aux hauteurs variées, les troncs moussus à enjamber, et les zones humides à franchir des plus vite. Et c'est justement au détour d'une d'un fourré que vous tombez sur...",
         "linesOfEffect": [
             {
-                "blackDie": [1,2],
-                "negativeText": "...very sharped",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [1,2,3],
+                "negativeText": "un étang rempli de moustiques dragon. Vous resserez vos bottes et commencez à vous enfoncer dans l'eau. Leurs piqures passent vos habits.",
+                "positiveText": "Mais cet étang attire ces énormes insectes pour une bonne raison. Après observation vous découvrez de petites fleurs blanches le long des berges. En les mangeant cela vous redonne des forces et les moustiques s'intéressent moins à vous.",
+                "negativeEffect":[{"quantity":1, "type":"life"}],
+                "positiveEffect":[{"quantity":4, "type":"life"}]
             },
             {
-                "blackDie": [3,4],
-                "negativeText": "...with poison",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [4,5],
+                "negativeText": "une énorme plante carnivore. Vous êtes surpris de ne pas l'avoir observé de plus loin, malgré la densité de la végétation. Impossible de la contouorner, faire un détour dans cette jungle sera synonyme de perte de votre orientation. Il vous faut la distraire.",
+                "positiveText": "Vous profitez de votre distraction pour récupérer une de ces glandes gluantes, vous pourrez l'utiliser contre un ennemi cherchant la confrontation.",
+                "negativeEffect":[{"quantity":2, "type":"food"}],
+                "positiveEffect":[{"quantity":2, "type":"potion-poison"}]
             },
             {
-                "blackDie": [5,6],
-                "negativeText": "...deadly",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [6],
+                "negativeText": "ou plutôt dans un trou ! Vous dégringolez les parois en terre avant de vous faire arrêter net par des pointes ascérées. Outch ! Un chaleur diffuse commence à fuser de votre cuisse et hanche. Une fois la douleur passée, vous peinez àremonter du trou à cause de la terre humide qui glisse sous vos doigts.",
+                "positiveText": "En sortant du trou vous étudiez le terrain et la fabrication du piège pour ne plus vous faire avoir.",
+                "negativeEffect":[{"quantity":3, "type":"life"}],
+                "positiveEffect":[{"quantity":3, "type":"experience"}]
             }
         ]
     },
     {
         "id": 2,
         "name": "Enchevêtrement de lianes",
-        "description": "XXX...",
+        "description": "Cet endroit et plein de végétation et ce coin est particulièrement dense en lianes. Elles y sont plus grosses, et elles ramifient même comme des doitgs de sorcière. Ce genre de rideau est difficlement pénétrable et impossible de voir à plus de deux mètres et donc de prévoir ce qu'il y a après chaque frange. Et justement...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "un serpent en sort au dernier moment, tombant sur vous de tout son poids, vous écrasant au sol et vous contraignant dans vos mouvements. Comprimé, il vous est difficle de respirer et de vous sortir ainsi de son étreinte. Seule solution, enlever votre armure pour partir.",
+                "positiveText": "Le serpent ne semble pas avoir remarqué votre échappée, trop occupé à chercher dans l'amas de vêtements que vous avez laissé. Vous en profitez pour sortir votre arme et l'enfoncer entre les écailles de l'animal. Vous découpez l'animal de manière grossière pour ne pas vous couper sur les écailles et récupérez un peu de viande.",
+                "negativeEffect":[{"quantity":1, "type":"armor"}],
+                "positiveEffect":[{"quantity":3, "type":"food"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "une lame pendulaire arrive sur vous. Vous n'avez pas pu prévoir le coup car cette lame verte foncée se fond entre les lianes fillamenteuses. Vous la prenez de plein fouet, tombant au sol.",
+                "positiveText": "Une fois que la lame ai finie de se balancer, amortie par votre corps, vous en profitez pour démonter le mécanisme et récupérer les pièces ayant un intérêt financier lors de votre prochain échange.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":1, "type":"armor"}],
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":2, "type":"experience"}]
             }
         ]
     },{
         "id": 3,
         "name": "Temple sacrificiel",
-        "description": "XXX...",
+        "description": "L'endroit est dégagé au sol et dans la air : la canopée a été décîmée. La grande place est dallée de gros blocs de pierre polis par la pluie. Le temple en bout de place est compact, comme tassé sur lui même, avec un toit en strates, et à cette distance l'autel devant lui semble être comme la première marche vers le toit. Vous avencez en longeant la place, pour ne pas être trop à la vue ou à l'exposition de potentiels pièges. Vous arrivez devant l'autel...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "et entrez dans le temple. Au premier coup d'oeil vous remarquez qu'il est peu profond. La décoration y est surtout faites par les peintures directement aux murs, les bougies et les babioles éparpillées dans toute la pièce. Vous entrez entièrement et sentez desuite comme une lourdeur vous assaillir, vous attirer vers le sol. Pourtant vous avez envie d'avancer, de toucher ce glyphe au mur, le centre de ce cercle rouge. Vous faites quelques pas de plus et vous retrouvez devant la pierre, votre main au contact de la peinture.",
+                "positiveText": "Après un temps incalculable, vous sortez de votre létargie et regardez autour de vous. Plus de peinture, mais les objets sont toujours là. Vous les récupérez, conscient de cela : vous pourrez tirer un bon prix de ces petits artefacts.",
+                "negativeEffect":[{"quantity":1, "type":"penalty-pointless"}],
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":1, "type":"experience"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "de nombreuses inscription colorées le parcours. Vous vous penchez pour l'étudier de plus prêt. Un pattern semble se répéter... sauf à cet endroit. Il y a comme une cassure dans les inscriptions, un changement dans les serpentins qui s'enlassent. Portant votre attention plus précisement à cet endroit, vous y apposez vos mains pour entourer ce passage et ainsi concentrer votre attention dessus. Ici, une genre de goutte ou de larme semble comme effacée. Mu par un mouvement inexpliqué, vos doigts se posent sur cette ornementation et la fond tourner, puis vous appuyez. Le pan de l'autel s'affaisse avec fracas. À l'intérieur en sort de nombreuse araignées, qui se répendent sur votre corps. Vous les chassez à grand geste mais l'une d'elle vous pique.",
+                "positiveText": "Vous l'écrasez d'un coup sec et précis, avant de faire place net pour contempler le trésor qui coule de l'autel. La joie se lie sur votre visage. Ne pensant plus à la douleur à votre main, vous remplissez vos poches de ces objets incrustés de pierres précieuses.",
+                "negativeEffect":[{"quantity":3, "type":"life"},{"quantity":1, "type":"penalty-poison"}],
+                "positiveEffect":[{"quantity":12, "type":"gold"},{"quantity":3, "type":"experience"}]
             }
         ]
     },{
         "id": 4,
         "name": "Pyramide labyrinthique",
-        "description": "XXX...",
+        "description": "La grandeur de ce bâtiment vous fait vous sentir minuscule. Un indice doit se trouver à l'intérieur, il vous faut rentrer mais l'envie n'est pas là. Vous franchissez à contre-coeur l'arche de la pyramide, plissant les yeux pour mieux voir dans cet endroit faiblement éclairé. À peine les premiers pas réalisés qu'un choix s'offre à vous. Prendrez-vous le chemin de gauche, de droite, ou continuerez-vous tout droit ?",
         "linesOfEffect": [
             {
-                "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "blackDie": [1,2],
+                "negativeText": "À gauche toute ! Votre choix a été fait après réflexion, en observant et écoutant bien tout les élements à votre disposition. Vous avencez donc serrainement dans le long couloir qui n'en fini plus de tourner. D'autres choix se présentent et votre réflexion vous emmène toujours plus loin dans cette pyramide. Au détour d'un enième couloir, vous appercevez une salle bien plus éclairée. Vous longez les murs, prenant grade de ne pas vous faire repérer. Clac ! Vous vous écartez d'un coup du mur, mais trop tard, des piques en sortent à une vitesse fulgurante et vous clouent sur l'autre mur, transperçant chairs et habits ! En s'arc-boutant vous arrivez à vous dégager non sans mal de cet accrochage indésirable. Le bruit déclanché ne semble pas avoir alerté les potentiels gardes que vous graignez de voir dans la pièce. Vous vous baissez malgré tout et avancez, cette fois-ci au centre du couloir. En arrivant dans la salle vous comprenez pourquoi personne n'est présent. La salle est vide.",
+                "positiveText": "Questionnant une fois de plus vos choix vous tournez en rond dans la salle, réflechissant à si il vou faut continuer ou rebrousser chemin. Vous décidez de vous reposer un instant en vous allongeant dans une sorte de baignoire de pierre grossièrement taillée dans la pierre. À votre réveil votre corps semble décontracté et votre esprit plus clair.",
+                "negativeEffect":[{"quantity":2, "type":"life"}],
+                "positiveEffect":[{"quantity":4, "type":"life"},{"quantity":2, "type":"experience"}]
+            },
+            {
+                "blackDie": [3,4],
+                "negativeText": "Toujours tout droit, les nombreux donjons parcours vous l'ont bien appris. Pas de réflexion sur les prochains embranchement : il faut toujours aller tout droit pour arriver au coeur de la pyramide. Une seule idée et une confiance débordante, vous avancez à grands pas, quand soudain... vous tombez dans un trou. Comment ? Vous ne seriez le dire, tout vous semblait pourtant si bien rouler. Et c'est c'est maintenant votre corps qui est en boule, et vous entrain de geindre. Vous reprenez votre souffle. Doucement. Puis vous remontez, enfin, vous essayez de remonter les murs lisses et glissants de votre trou. Cela vous semble impossible, et la peur de rester à désecher ici commence à poindre le bout de son nez. Mais vous vient l'idée d'utiliser une partie de vos armes, coincées dans le mur comme marche vers le haut du trou. Vous vous campez sur vos pieds pour utiliser toute vote force pour enfoncer certaines de vos armes dans les micro fissures de la pierre, et ainsi vous permettre de vous hisser et de sortir de trou. Heureusement !",
+                "positiveText": "Présentement en haut du trou, vous plissez les yeux pour observer la cause de votre chute. Un trompe l'oeil ! Vous pensiez marcher sur le sol mais c'est en fait une peinture qui était faite sur les pans du trou. Vous ferez plus attention la prochaine fois.",
+                "negativeEffect":[{"quantity":1, "type":"life"},{"quantity":1, "type":"penalty-pointless"}],
+                "positiveEffect":[{"quantity":3, "type":"experience"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "N'ayant pas d'idée, vous écoutez une voix dans votre tête qui vous dit de prendre à droite. Ni une ni deux vous vous enfonssez dans ce couloir qui vous semble pourtant plus obscure. Si bien que dans la pénombre vous ne voyez pas où vous marchez. Une flque d'eau vous fait glisser et vous dévalez la pente glissante, vous envoyant valdinguer sur l'angle du fond du couloir. Vous vous relevez péniblement puis continuez votre pogression.",
+                "positiveText": "Après cet incident facheux vous clodiquez lentement, mais vous arrivez tant bien que mal à le prochaine salle, visiblement celle de la bamboche. Des tables sont dressées et remplies de victuailles en tout genre. Vous ne perdez pas de temps, prennez quelques nourritures que vous conaissez et qui se conservent bien, puis filez au plus vite.",
+                "negativeEffect":[{"quantity":2, "type":"life"}],
+                "positiveEffect":[{"quantity":3, "type":"food"}]
             }
         ]
     },{
         "id": 5,
         "name": "Maraicages infestés",
-        "description": "XXX...",
+        "description": "Une fois de plus vous croisez un maraicage. Rien de bien surprenant dans cette partie du monde. Comme à votre habitude, vous étudiez les mouvements de l'eau, les berges et l'autre rive, les amas de bois pour identifier si ils sont natuels, puis entrez dans l'eau.",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "C'est au premier tiers du chemin que vous sentez des ondes dans l'eau et observez une vague se former sur votre gauche. Une vague qui se rapproche de vous. Impossible de courir dans un sens ou un autre pour éviter  a bête. Vous cherhez dans cette eau trouble avec vos pieds une racine pour coincer ces derniers et avoir un appuie au sol, un ancrage pouvant vous donner de la force dans vos mouvements. trouvé ! En position, un peu de coté, vous attendez la bête... qui ne se fait pas prier pour se propulser vers votre cou ! Vos deux mains ont juste le reflexe de dévier la machôîre béante de sa trajectoire, mais le poids de l'animal lancé à pleine allure vous entraîne et vous chutez. De vos mains et bras vous maintenez l'animal au sol, ne voulant surtout pas perdre le contact physique, une respiration et vous plongez entièrement, jugeant au touchez de votre corps pour l'immobiliser. Une lutte brève s'ensuit, vous perdez presque la prise sur l'animal mais au dernier moment vous arrivez à planter votre lame dans ce qu'il vous semble être la tête de ce dernier. Vous reprenez votre souffle tout en regardant autour de vous voir si il n'y en a pas d'autres, puis quittez prestement l'endroit. C'est en sortant sur berge que vous vous rendez compte que votre bras droit est sâlement amoché, et en vérifiant votre sac à dos vous constatez que vous avez perdus quelques monnaies durant votre lutte.",
+                "positiveText": "Vous déposez sur l'herbe l'animal tué que vous avez traîné, puis vous vous asseyez un instant pour reprendre vos idées. Puis, vous rapellant que vous avez de l'eau propre, vous lavez votre bras au mieux avant de l'enrober d'argile repérée plus haut sur la rive. Vous en peu plus pour les prochaines fois, et taillez grossièrement la viande de l'animal que vous venez de tuer.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":4, "type":"gold"}],
+                "positiveEffect":[{"quantity":1, "type":"armor"},{"quantity":1, "type":"life"},{"quantity":2, "type":"food"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "La traversée se fait sans encombre. L'eau semble plus froid qu'à l'habitude et une fois sur l'autre rive vous vous étonnez que le froid commence à remonter votre corps. Vous inspectez vos bottes, sortez vos pieds de celles-ci... Ils sont tachetés de piqures bleutées, boursouflés et vos veines plus apparentes. Votre coeur qui accélère de panique en voyant le venin provenant du dard de quelques animaux aquatiques n'est pas le bienvenue. Vous vous relevez, ne bougez plus et observez les alentours à la recherche de plantes utiles dans cette situation, pour vous faire ralentir le coeur, en l'endormissant, et évacuer les toxines par dégradation de celles-ci. Le froid arrive au bas de vos poumons quand vous trouvez enfin ces ingrédients. Vous mettez ces plantes entières dans la bouche, avant de vous coincer contre un arbe pour ne pas tomber.  Mais le ciel commence à s'assombrir, vous devez partir.",
+                "positiveText": "Vous vous faites une saignée pour extraire les dernières gouttes de venin le plus rapidement possible, pandez vos pieds d'un tissu sec et rèche puis renfilez vos bottes avant de continuer votre progression dans la forêt.",
+                "negativeEffect":[{"quantity":1, "type":"penalty-blindess"}],
+                "positiveEffect":[{"quantity":1, "type":"life"},{"quantity":1, "type":"potion-poison"}]
             }
         ]
     },{
         "id": 6,
         "name": "Fleurs intriguantes",
-        "description": "XXX...",
+        "description": "Quoi de plus beau que des fleurs épanouies, qui plus est un regroupement de ces fleurs avec de douces odeurs ? Pas grand chose ces derniers temps, alors pourquoi pas en profiter pour traverser ce champs d'un pas léger ?",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "Vous ceuillez des fleurs et en mangez directement certaines.",
+                "positiveText": "Cela vous fait du bien d'être dans cet état paisible. Vous en profitez pour écouter vos sens et expériemnter les effets ce ces différentes plantes, sentant certains négtaifs mais également certains positifs, comme des plantes qui empoisonnent et d'autres dont le renflemment explose à l'écrasement.",
+                "negativeEffect":[{"quantity":1, "type":"penalty-XXX"}],
+                "positiveEffect":[{"quantity":1, "type":"potion-poison"},{"quantity":1, "type":"potion-explosion"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "Vos pas ce sont lours et votre tête se perd un peu, papillonne. Vous vous écroulez rapidement au milieu des fleurs, déjà entrain de dormir. Vous vous réveillez la nuit, mal au crâne et la faim au ventre. Les fleurs se sont fermées, leurs odeurs se sont estompées. Vous pouvez donc rester en cet endroit pour manger un peu de vos rations de nourriture avant de repartir.",
+                "positiveText": "Une fois le repas terminé, vous profitez de ce lieu pour faire votre cueillette, de quoi vous aventager pour les prochaines étapes du voyage.",
+                "negativeEffect":[{"quantity":2, "type":"food"},{"quantity":1, "type":"penalty-blindess"}],
+                "positiveEffect":[{"quantity":1, "type":"potion-XXX"},{"quantity":1, "type":"potion-XXX"}]
             }
         ]
     },{
         "id": 7,
         "name": "Canyon encaissé",
-        "description": "XXX...",
+        "description": "Vous sortez de la végétation pour arriver sur un plateau dominant un canyon. Vous devez poursuivre donc cette direction, donc vous commencez à descendre les flancs de pierres au teintes orangés. Vous arrivez en bas et commencez à suivre le couloir tout tracé qui serpente nonchalement. La paisibilité du lieu, son petit cours d'eau et cette végétation plus sec vous fait presque oublié la raison de votre venue.",
         "linesOfEffect": [
             {
-                "blackDie": [1,2,3,4],
-                "negativeText": "...small",
+                "blackDie": [1],
+                "negativeText": "Un trou dans la falaise sur votre droite attire votre regard. Il est peu profond mais très long, et des formes sombres semblent posées dedans, tel des oiseaux dans un nid. En vous approchant de ces curieuses silhouettes, vous identifiez des habitations creusées dans la roche, des sortes d'enclos et lieu de stockage, des cuves et cavitées creuses. Vous vous approchez et décidez d'entrer dans un des batiments délabré, celui qui vous semble le plus grand. Une douce odeur de feuilles séchées s'en dégage. Vous époussetez et fouillez les lieux. Pas grand chose dans celui-ci. Vous ouvrez la dernière porte du premier étage, et la porte tombe lourdement sur le sol. Par un effet d'enchaînement des structures maintenant les poutres s'effondres tout comme le toit en bois qui vous tombe dessus ! Le pan de porte en terre battu vous protège en partie, mais un morceau de bois vous fait trébucher et vous tombez de tout votre long dans les débrits. Votre sac en est un peu déchiré. Vous décidez de partir de ces ruines sans intérêt.",
+                "positiveText": "Vous attendez que la poussière soit retombée avant de partir, et jettez un coup d'oeil à cette dernière pièce instable. De petites formes brillent malgré la poussière. Un coffre béant à été éventré par la chute du toit, et son contenu est maintenant répendu sur le sol. En cherchant avec minutie dans cette salle qui finalement n'est pas si intéressante que ça, vous découvrez des habits encore solide. Vous les assemblez pour que ces morceaux épars puissent devenir une protection.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":2, "type":"gold"}],
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":1, "type":"armor"}]
+            },
+            {
+                "blackDie": [2,3,4],
+                "negativeText": "...large",
                 "positiveText": "...small",
                 "negativeEffect":[{"quantity":1, "type":"gold"}],
                 "positiveEffect":[{"quantity":1, "type":"gold"}]

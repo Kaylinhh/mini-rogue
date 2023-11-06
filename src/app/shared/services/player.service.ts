@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Player } from '../../models/player.model';
 import { LocalStorageService } from './local-storage.service';
+import { Penalty } from 'src/app/models/penalty.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
 
-  private _normalPlayer: Player = new Player(12,1,10,5,0,[],[],1,"[door]",0,4,1,7,1,[2,4,7],"bloodmage");
+  private _normalPlayer: Player = new Player(12,1,10,5,0,[],new Penalty(0,0,0),1,"[door]",0,4,1,7,1,[2,4,7],"bloodmage");
 
-  private _hardPlayer: Player = new Player(10,0,5,2,0,[],[],1,"[door]",1,6,1,8,1,[2,4,8],"bloodmage");
+  private _hardPlayer: Player = new Player(10,0,5,2,0,[],new Penalty(0,0,0),1,"[door]",1,6,1,8,1,[2,4,8],"bloodmage");
 
   private readonly _player$: BehaviorSubject<Player> = new BehaviorSubject<Player>(this._normalPlayer);
 

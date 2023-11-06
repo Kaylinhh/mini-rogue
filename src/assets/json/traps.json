@@ -9,54 +9,54 @@
                 "negativeText": "un étang rempli de moustiques dragon. Vous resserez vos bottes et commencez à vous enfoncer dans l'eau. Leurs piqures passent vos habits.",
                 "positiveText": "Mais cet étang attire ces énormes insectes pour une bonne raison. Après observation vous découvrez de petites fleurs blanches le long des berges. En les mangeant cela vous redonne des forces et les moustiques s'intéressent moins à vous.",
                 "negativeEffect":[{"quantity":1, "type":"life"}],
-                "positiveEffect":[{"quantity":3, "type":"life"}]
+                "positiveEffect":[{"quantity":4, "type":"life"}]
             },
             {
                 "blackDie": [4,5],
                 "negativeText": "une énorme plante carnivore. Vous êtes surpris de ne pas l'avoir observé de plus loin, malgré la densité de la végétation. Impossible de la contouorner, faire un détour dans cette jungle sera synonyme de perte de votre orientation. Il vous faut la distraire.",
                 "positiveText": "Vous profitez de votre distraction pour récupérer une de ces glandes gluantes, vous pourrez l'utiliser contre un ennemi cherchant la confrontation.",
                 "negativeEffect":[{"quantity":2, "type":"food"}],
-                "positiveEffect":[{"quantity":1, "type":"potion-poison"}]
+                "positiveEffect":[{"quantity":2, "type":"potion-poison"}]
             },
             {
                 "blackDie": [6],
-                "negativeText": "...deadly",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "ou plutôt dans un trou ! Vous dégringolez les parois en terre avant de vous faire arrêter net par des pointes ascérées. Outch ! Un chaleur diffuse commence à fuser de votre cuisse et hanche. Une fois la douleur passée, vous peinez àremonter du trou à cause de la terre humide qui glisse sous vos doigts.",
+                "positiveText": "En sortant du trou vous étudiez le terrain et la fabrication du piège pour ne plus vous faire avoir.",
+                "negativeEffect":[{"quantity":3, "type":"life"}],
+                "positiveEffect":[{"quantity":3, "type":"experience"}]
             }
         ]
     },
     {
         "id": 2,
         "name": "Enchevêtrement de lianes",
-        "description": "XXX...",
+        "description": "Cet endroit et plein de végétation et ce coin est particulièrement dense en lianes. Elles y sont plus grosses, et elles ramifient même comme des doitgs de sorcière. Ce genre de rideau est difficlement pénétrable et impossible de voir à plus de deux mètres et donc de prévoir ce qu'il y a après chaque frange. Et justement...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "un serpent en sort au dernier moment, tombant sur vous de tout son poids, vous écrasant au sol et vous contraignant dans vos mouvements. Comprimé, il vous est difficle de respirer et de vous sortir ainsi de son étreinte. Seule solution, enlever votre armure pour partir.",
+                "positiveText": "Le serpent ne semble pas avoir remarqué votre échappée, trop occupé à chercher dans l'amas de vêtements que vous avez laissé. Vous en profitez pour sortir votre arme et l'enfoncer entre les écailles de l'animal. Vous découpez l'animal de manière grossière pour ne pas vous couper sur les écailles et récupérez un peu de viande.",
+                "negativeEffect":[{"quantity":1, "type":"armor"}],
+                "positiveEffect":[{"quantity":3, "type":"food"}]
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "...large",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "une lame pendulaire arrive sur vous. Vous n'avez pas pu prévoir le coup car cette lame verte foncée se fond entre les lianes fillamenteuses. Vous la prenez de plein fouet, tombant au sol.",
+                "positiveText": "Une fois que la lame ai finie de se balancer, amortie par votre corps, vous en profitez pour démonter le mécanisme et récupérer les pièces ayant un intérêt financier lors de votre prochain échange.",
+                "negativeEffect":[{"quantity":2, "type":"life"},{"quantity":1, "type":"armor"}],
+                "positiveEffect":[{"quantity":8, "type":"gold"},{"quantity":2, "type":"experience"}]
             }
         ]
     },{
         "id": 3,
         "name": "Temple sacrificiel",
-        "description": "XXX...",
+        "description": "L'endroit est dégagé au sol et dans la air : la canopée a été décîmée. La grande place est dallée de gros blocs de pierre polis par la pluie. Le temple en bout de place est compact, comme tassé sur lui même, avec un toit en strates, et à cette distance l'autel devant lui semble être comme la première marche vers le toit. Vous avencez en longeant la place, pour ne pas être trop à la vue ou à l'exposition de potentiels pièges. Vous arrivez devant l'autel...",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
+                "negativeText": "et entrez dans le temple. Au premier coup d'oeil vous remarquez qu'il est peu profond. La décoration y est surtout faites par les peintures directement aux murs, les bougies et les babioles éparpillées dans toute la pièce. Vous entrez entièrement et sentez desuite comme une lourdeur vous assaillir, vous attirer vers le sol. Pourtant vous avez envie d'avancer, de toucher ce glyphe au mur, le centre de ce cercle rouge. Vous faites quelques pas de plus et vous retrouvez devant la pierre, votre main au contact de la peinture.",
                 "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
+                "negativeEffect":[{"quantity":1, "type":"penalty-pointless"}],
                 "positiveEffect":[{"quantity":1, "type":"gold"}]
             },
             {

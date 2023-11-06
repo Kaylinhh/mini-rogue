@@ -108,23 +108,23 @@
             },
             {
                 "blackDie": [5,6],
-                "negativeText": "La traversée se fait sans encombre. L'eau semble plus froid qu'à l'habitude et une fois sur l'autre rive vous vous étonnez que le froid commence à remonter votre corps. Vous inspectez vos bottes, sortez vos pieds de celles-ci... Ils sont tachetés de piqures bleutées, boursouflés et vos veines plus apparentes. Votre coeur qui accélère de panique en voyant le venin provenant du dard de quelques animaux aquatiques n'est pas le bienvenue. Vous vous relevez, ne bougez plus et observez les alentours à la recherche de plantes utiles dans cette situation, pour vous faire ralentir le coeur, en l'endormissant, et évacuer les toxines par dégradation de celles-ci. Le froid arrive au bas de vos poumons quand vous trouvez enfin ces ingrédients. Vous mettez ces plantes entières dans la bouche, avant de vous coincer contre un arbe pour ne pas tomber.",
-                "positiveText": "...small",
+                "negativeText": "La traversée se fait sans encombre. L'eau semble plus froid qu'à l'habitude et une fois sur l'autre rive vous vous étonnez que le froid commence à remonter votre corps. Vous inspectez vos bottes, sortez vos pieds de celles-ci... Ils sont tachetés de piqures bleutées, boursouflés et vos veines plus apparentes. Votre coeur qui accélère de panique en voyant le venin provenant du dard de quelques animaux aquatiques n'est pas le bienvenue. Vous vous relevez, ne bougez plus et observez les alentours à la recherche de plantes utiles dans cette situation, pour vous faire ralentir le coeur, en l'endormissant, et évacuer les toxines par dégradation de celles-ci. Le froid arrive au bas de vos poumons quand vous trouvez enfin ces ingrédients. Vous mettez ces plantes entières dans la bouche, avant de vous coincer contre un arbe pour ne pas tomber.  Mais le ciel commence à s'assombrir, vous devez partir.",
+                "positiveText": "Vous vous faites une saignée pour extraire les dernières gouttes de venin le plus rapidement possible, pandez vos pieds d'un tissu sec et rèche puis renfilez vos bottes avant de continuer votre progression dans la forêt.",
                 "negativeEffect":[{"quantity":1, "type":"penalty-blindess"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "positiveEffect":[{"quantity":1, "type":"life"},{"quantity":1, "type":"potion-poison"}]
             }
         ]
     },{
         "id": 6,
         "name": "Fleurs intriguantes",
-        "description": "XXX...",
+        "description": "Quoi de plus beau que des fleurs épanouies, qui plus est un champ de ces fleurs avec de douces odeurs ? Pas grand chose ces derniers temps, alors pourquoi pas en profiter pour traverser ce champs d'un pas léger ?",
         "linesOfEffect": [
             {
                 "blackDie": [1,2,3,4],
-                "negativeText": "...small",
-                "positiveText": "...small",
-                "negativeEffect":[{"quantity":1, "type":"gold"}],
-                "positiveEffect":[{"quantity":1, "type":"gold"}]
+                "negativeText": "Vous ceuillez des fleurs et en mangez directement certaines.",
+                "positiveText": "Cela vous fait du bien d'être dans cet état paisible. Vous en profitez pour écouter vos sens et expériemnter les effets ce ces différentes plantes, sentant certains négtaifs mais également certains positifs, comme des plantes qui empoisonnent et d'autres dont le renflemment explose à l'écrasement.",
+                "negativeEffect":[{"quantity":1, "type":"penalty-XXX"}],
+                "positiveEffect":[{"quantity":1, "type":"potion-poison"},{"quantity":1, "type":"potion-explosion"}]
             },
             {
                 "blackDie": [5,6],
